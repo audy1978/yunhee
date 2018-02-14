@@ -727,7 +727,10 @@
 <li class="active"><a data-toggle="tab" href="#home">รายละเอียดงาน</a></li>
 <li ><a data-toggle="tab" href="#note_file">ข้อความและเอกสารแนบ</a></li>
 <li ><a data-toggle="tab" href="#tab1">tab1</a></li>
-
+<li ><a data-toggle="tab" href="#tab2">tab2</a></li>
+<li ><a data-toggle="tab" href="#tab3">tab3</a></li>
+<li ><a data-toggle="tab" href="#tab4">tab4</a></li>
+<li ><a data-toggle="tab" href="#tab5">tab5</a></li>
 
 
 
@@ -3162,9 +3165,31 @@ function chkEvent(e) {
     </div>
      <!-- สิ้นสุด tab ข้อความ -->
 <div id="tab1" class="tab-pane fade">
-  <h4> test</h4>
+  <h4>  tab 1</h4>
 </div>
  <!-- สิ้นสุด tab1 -->
+
+ <div id="tab2" class="tab-pane fade">
+   <h4>  tab 2</h4>
+ </div>
+  <!-- สิ้นสุด tab2 -->
+
+
+  <div id="tab3" class="tab-pane fade">
+    <h4>  tab 3</h4>
+  </div>
+   <!-- สิ้นสุด tab3 -->
+
+   <div id="tab4" class="tab-pane fade">
+     <h4>  tab 4</h4>
+   </div>
+    <!-- สิ้นสุด tab4 -->
+
+
+    <div id="tab5" class="tab-pane fade">
+      <h4>  tab 5</h4>
+    </div>
+     <!-- สิ้นสุด tab5 -->
 
 </div>
 
