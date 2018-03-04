@@ -726,11 +726,20 @@
 
 <li class="active"><a data-toggle="tab" href="#home">รายละเอียดงาน</a></li>
 <li ><a data-toggle="tab" href="#note_file">ข้อความและเอกสารแนบ</a></li>
-<li ><a data-toggle="tab" href="#tab1">tab1</a></li>
-<li ><a data-toggle="tab" href="#tab2">tab2</a></li>
-<li ><a data-toggle="tab" href="#tab3">tab3</a></li>
-<li ><a data-toggle="tab" href="#tab4">tab4</a></li>
-<li ><a data-toggle="tab" href="#tab5">tab5</a></li>
+<li ><a data-toggle="tab" href="#tab1">1. ชื่อกระดาษ</a></li>
+<li ><a data-toggle="tab" href="#tab2"> 2. งานพิมพ์</a></li>
+<li ><a data-toggle="tab" href="#tab3">3. เคลือบผิวหน้าแบบ</a></li>
+<li ><a data-toggle="tab" href="#tab4">4. ลูกฟูก</a></li>
+<li ><a data-toggle="tab" href="#tab5"> 5. ฟอยล์</a></li>
+<li ><a data-toggle="tab" href="#tab6">6. ติดกาว</a></li>
+<li ><a data-toggle="tab" href="#tab7">tab7</a></li>
+<li ><a data-toggle="tab" href="#tab8"> 8. ค่าขนส่ง</a></li>
+<li ><a data-toggle="tab" href="#tab9">9. ค่าวัสดุพิเศษอื่น ๆ</a></li>
+<li ><a data-toggle="tab" href="#tab10">10. จำนวนเพลท</a></li>
+<li ><a data-toggle="tab" href="#tab11">11. ค่าแบบกระทุ้ง</a></li>
+<li ><a data-toggle="tab" href="#tab12">12. ค่าบล็อคปั้มนูน</a></li>
+<li ><a data-toggle="tab" href="#tab13">13.	ค่าบล็อคปั้มเค</a></li>
+<li ><a data-toggle="tab" href="#tab14"> 14. ค่าอลูมิเนียม</a></li>
 
 
 
@@ -1483,7 +1492,7 @@ function chkEvent(e) {
 
 
 
-
+ 
 
     <hr>
 
