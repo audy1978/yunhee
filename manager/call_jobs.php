@@ -11,7 +11,7 @@
    <?php include 'db/config_db.php'; ?>
 
 
-aaa
+
 
     <!--/ ค้นหาข้อมูล file code -->
      <?php
@@ -3172,9 +3172,167 @@ function chkEvent(e) {
 
 
     </div>
+    
      <!-- สิ้นสุด tab ข้อความ -->
+     
+     
+     
 <div id="tab1" class="tab-pane fade">
-  <h4>  tab 1</h4>
+    
+    <p></p>
+ 
+          <div class="box box-danger">
+
+                     <div class="row">
+                   <div class="col-md-12">
+                <div class="col-md-2">
+
+                    <label>1. ชื่อกระดาษ</label>
+
+                </div>
+
+               
+
+                     </div>
+
+                     </div>
+
+                <div class="box-body">
+                  <div class="row">
+                      <div class="col-md-12">
+                    <div class="col-xs-1">
+                      <label>ประเภท</label>
+
+
+
+         <input type="text" class="form-control" style="width:100px;" id="pur_cat_box" value="<?php echo $pur_cat; ?>" placeholder="" >
+
+
+
+                    </div>
+                    <div class="col-xs-2">
+                      <label>ผู้ขาย</label>
+               <input type="text" class="form-control" style="width:150px;" id="pur_seller_box" value="<?php echo $pur_seller; ?>" placeholder="" OnChange="JavaScript:chkNum(this)" >
+
+                    </div>
+                    <div class="col-xs-1">
+                      <label>ยี่ห้อ</label>
+                       <input type="text" class="form-control" style="width:100px;" id="pur_band_box" value="<?php echo $pur_band; ?>" placeholder=""  >
+                    </div>
+
+                    <div class="col-xs-1">
+                        <label>ความหนา</label>
+                        <input type="text" class="form-control" style="width:100px; text-align: right;" name="pur_thick_box" id="pur_thick_box" value="<?php echo $pur_thick; ?>" placeholder="" OnChange="JavaScript:chkNum0(this)" required>
+                    </div>
+
+                      <div class="col-xs-1">
+                        <label>ขนาด</label>
+                        <input type="text" class="form-control" style="width:100px; text-align: right;" name="man_SizePaper_box" id="man_SizePaper_box" value="<?php echo $pur_sizepaper; ?>" placeholder="" OnChange="JavaScript:chkNum(this)" >
+                    </div>
+
+                      <div class="col-xs-1">
+                        <label>แบบ</label>
+                        <input type="text" class="form-control" style="width:100px; text-align: right;" name="man_TypePaper_box" id="man_TypePaper_box" value="<?php echo $pur_type; ?>" placeholder="" OnChange="JavaScript:chkNum(this)" >
+                    </div>
+
+
+
+                    <div class="col-xs-1">
+                         <label>ราคาจัดซื้อ</label>
+                         <input type="text" class="form-control" style="width:100px; text-align: right;" id="pur_offersale_box" name ="pur_offersale_box" value="<?php echo $pur_offersale; ?>" placeholder=""  onchange="calc_paper()" >
+                     </div>
+
+                      <div class="col-xs-1">
+                          <label>ราคากระดาษ</label>
+                          <input name="paper_price_box" id="paper_price_box" type="text" class="form-control"   value="<?php echo $paper_price_calc; ?>" style="text-align: right;background: #F9E79F " readonly>
+                     </div>
+
+                      <div class="col-xs-2">
+                            <label> <font color=red>*</font> ราคากระดาษจริง</label>
+                            <input name="paper_price_box2"  id="paper_price_box2" type="text" class="form-control" style="width:150px; text-align: right; background: #4FFF7E" value="<?php echo $jobs_real_price_save; ?>" OnChange="JavaScript:chkNum(this)">
+                    </div>
+                      <div class="col-xs-1">
+                          <label> <font color="f7f7f7"> _</font></label>
+            <!--         <button type="button" name = "bt_confirm_price_paper" id = "bt_confirm_price_paper" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Md_confirm_price_paper">ยืนยันราคา</button> -->
+                    </div>
+
+                      </div>
+                  </div>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+              
+              <!-- ความหนากระดาษ -->
+
+
+               <div class="row">
+           <div class="col-md-12">
+
+    <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+<th></th>
+<th>&nbsp;ความหนา</th>
+<th><input name="exa_plastic_thick_box_gram" id="exa_plastic_thick_box_gram" style="width:60px; text-align: right;" type="text" class="form-control" style="text-align: right" value="<?php echo $pur_thick_gram; ?>" maxlength="3"  OnChange="JavaScript:chkNum_z(this)"></th>
+<th>แกรม &nbsp; &nbsp;Size กระดาษ  &nbsp;กว้าง</th>
+<th><input name="exa_plastic_width_box" id="exa_plastic_width_box" style="width:80px; text-align: right;" type="text" class="form-control" placeholder="" maxlength="8"  value="<?php echo $pur_size_width; ?>" ></th>
+<th> &nbsp;ยาว</th>
+<th><input name="exa_plastic_length_box" id="exa_plastic_length_box" style="width:80px; text-align: right;" type="text" class="form-control" placeholder="" maxlength="8"  value="<?php echo $pur_size_length; ?>" ></th>
+<th>&nbsp; &nbsp;น้ำหนักต่อรีม</th>
+<th><input name="man_weight_perReam_box" id="man_weight_perReam_box" style="width:60px; text-align: right;" type="text" class="form-control" placeholder="" maxlength="3" style="text-align: right" value="<?php echo number_format((($pur_thick_gram*$pur_size_width*$pur_size_length)/3100)); ?>" ></th>
+
+
+<th>&nbsp;การเลย์&nbsp; &nbsp;</th>
+<th><input name="lay_1" id="lay_1" style="width:50px; text-align: right;" type="text" class="form-control" placeholder="" style="text-align: center" value="1" readonly></th>
+<th> &nbsp;-&nbsp; </th>
+<th><input name="lay_2" id="lay_2" style="width:50px; text-align: right;" maxlength="2" type="text" class="form-control" placeholder="" style="text-align: right" value="<?php echo $pur_lay2; ?>" OnChange="JavaScript:chkNum_z(this)"></th>
+<th> &nbsp;-&nbsp; </th>
+<th><input name="lay_3" id="lay_3" style="width:50px; text-align: right;" maxlength="2" type="text" class="form-control" placeholder="" style="text-align: right" value="<?php echo $pur_lay3; ?>" OnChange="JavaScript:chkNum_z(this)"></th>
+
+
+
+</tr>
+
+</thead>
+
+    </table>
+               </div>
+</div>
+
+
+           <!-- จบ ความหนากระดาษ -->
+
+       
+                <div class="row">
+                 <div class="col-md-12">
+    <table data-toggle="table" data-striped="true">
+<thead>
+    <tr>
+         <th >&nbsp;ขนาดกระดาษเข้าเครื่อง <font color=red>*&nbsp;</font>กว้าง  &nbsp; </th>
+         <th><input name="man_printer_width_box" id="man_printer_width_box" style="width:60px; text-align: right;"  type="text" class="form-control" placeholder="" style="text-align: right" value="<?php echo $man_printer_width; ?>"   required OnChange="JavaScript:chkNum2(this)"></th>
+        <th>&nbsp; &nbsp;และ <font color=red>*&nbsp;</font> ยาว &nbsp;</th>
+        <th><input name="man_printer_lenght_box" id="man_printer_lenght_box" style="width:60px; text-align: right;"  type="text" class="form-control" placeholder="" style="text-align: right" value="<?php echo $man_printer_lenght; ?>" required OnChange="JavaScript:chkNum2(this)"></th>
+        <th>&nbsp; &nbsp;&nbsp; &nbsp;</th>
+        <th><button  id="btn_confirm_manager" name="btn_confirm_manager" type="submit" class="btn btn-primary" >บันทึก</button>  </th>
+    </tr>
+</thead>
+    </table>
+                     
+                          <div class="col-xs-2">
+
+                   <button type="button" name = "bt_calc1" id = "bt_calc1" class="btn btn-primary pull-right" onclick="calc_paper()">คำนวณค่ากระดาษ</button>
+                    </div>  
+                     
+                </div>
+                </div>
+
+
+
+
+
+           <hr>
+  
+  
+  
 </div>
  <!-- สิ้นสุด tab1 -->
 
