@@ -3180,6 +3180,8 @@ function chkEvent(e) {
 <div id="tab1" class="tab-pane fade">
     
     <p></p>
+    
+      <form method="post" id="sales_edit_tab1" name= "sales_edit_tab1" class="form" action= "manager_jobs_edit_tab1.php" >
  
           <div class="box box-danger">
 
@@ -3239,17 +3241,17 @@ function chkEvent(e) {
 
                     <div class="col-xs-1">
                          <label>ราคาจัดซื้อ</label>
-                         <input type="text" class="form-control" style="width:100px; text-align: right;" id="pur_offersale_box" name ="pur_offersale_box" value="<?php echo $pur_offersale; ?>" placeholder=""  onchange="calc_paper()" >
+                         <input type="text" class="form-control" style="width:100px; text-align: right;" id="pur_offersale_box_tab1" name ="pur_offersale_box_tab1" value="<?php echo $pur_offersale; ?>" placeholder=""  onchange="calc_paper()" >
                      </div>
 
                       <div class="col-xs-1">
                           <label>ราคากระดาษ</label>
-                          <input name="paper_price_box" id="paper_price_box" type="text" class="form-control"   value="<?php echo $paper_price_calc; ?>" style="text-align: right;background: #F9E79F " readonly>
+                          <input name="paper_price_box_tab1" id="paper_price_box_tab1" type="text" class="form-control"   value="<?php echo $paper_price_calc; ?>" style="text-align: right;background: #F9E79F " readonly>
                      </div>
 
                       <div class="col-xs-2">
                             <label> <font color=red>*</font> ราคากระดาษจริง</label>
-                            <input name="paper_price_box2"  id="paper_price_box2" type="text" class="form-control" style="width:150px; text-align: right; background: #4FFF7E" value="<?php echo $jobs_real_price_save; ?>" OnChange="JavaScript:chkNum(this)">
+                            <input name="paper_price_box2_tab1"  id="paper_price_box2_tab1" type="text" class="form-control" style="width:150px; text-align: right; background: #4FFF7E" value="<?php echo $jobs_real_price_save; ?>" OnChange="JavaScript:chkNum(this)">
                     </div>
                       <div class="col-xs-1">
                           <label> <font color="f7f7f7"> _</font></label>
@@ -3272,11 +3274,11 @@ function chkEvent(e) {
 <tr>
 <th></th>
 <th>&nbsp;ความหนา</th>
-<th><input name="exa_plastic_thick_box_gram" id="exa_plastic_thick_box_gram" style="width:60px; text-align: right;" type="text" class="form-control" style="text-align: right" value="<?php echo $pur_thick_gram; ?>" maxlength="3"  OnChange="JavaScript:chkNum_z(this)"></th>
+<th><input name="exa_plastic_thick_box_gram_tab1" id="exa_plastic_thick_box_gram_tab1" style="width:60px; text-align: right;" type="text" class="form-control" style="text-align: right" value="<?php echo $pur_thick_gram; ?>" maxlength="3"  OnChange="JavaScript:chkNum_z(this)"></th>
 <th>แกรม &nbsp; &nbsp;Size กระดาษ  &nbsp;กว้าง</th>
-<th><input name="exa_plastic_width_box" id="exa_plastic_width_box" style="width:80px; text-align: right;" type="text" class="form-control" placeholder="" maxlength="8"  value="<?php echo $pur_size_width; ?>" ></th>
+<th><input name="exa_plastic_width_box_tab1" id="exa_plastic_width_box_tab1" style="width:80px; text-align: right;" type="text" class="form-control" placeholder="" maxlength="8"  value="<?php echo $pur_size_width; ?>" ></th>
 <th> &nbsp;ยาว</th>
-<th><input name="exa_plastic_length_box" id="exa_plastic_length_box" style="width:80px; text-align: right;" type="text" class="form-control" placeholder="" maxlength="8"  value="<?php echo $pur_size_length; ?>" ></th>
+<th><input name="exa_plastic_length_box_tab1" id="exa_plastic_length_box_tab1" style="width:80px; text-align: right;" type="text" class="form-control" placeholder="" maxlength="8"  value="<?php echo $pur_size_length; ?>" ></th>
 <th>&nbsp; &nbsp;น้ำหนักต่อรีม</th>
 <th><input name="man_weight_perReam_box" id="man_weight_perReam_box" style="width:60px; text-align: right;" type="text" class="form-control" placeholder="" maxlength="3" style="text-align: right" value="<?php echo number_format((($pur_thick_gram*$pur_size_width*$pur_size_length)/3100)); ?>" ></th>
 
@@ -3319,7 +3321,7 @@ function chkEvent(e) {
                      
                           <div class="col-xs-2">
 
-                   <button type="button" name = "bt_calc1" id = "bt_calc1" class="btn btn-primary pull-right" onclick="calc_paper()">คำนวณค่ากระดาษ</button>
+                   <button type="button" name = "bt_calc1_tab1" id = "bt_calc1_tab1" class="btn btn-primary pull-right" onclick="calc_paper()">คำนวณค่ากระดาษ</button>
                     </div>  
                      
                 </div>
@@ -3331,35 +3333,613 @@ function chkEvent(e) {
 
            <hr>
   
-  
+      </form>
   
 </div>
  <!-- สิ้นสุด tab1 -->
 
  <div id="tab2" class="tab-pane fade">
-   <h4>  tab 2</h4>
+   
+     
+     <p></p>
+
+    <!-- งานพิมพ์จำนวน -->
+
+     <div class="row">
+    <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+<th></th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. งานพิมพ์  จำนวน</th>
+<th><input type="text" class="form-control" style="width:50px; text-align: right;" id="exa_printAmont_box" name="exa_printAmont_box" value="<?php echo $exa_printAmont; ?>" placeholder="" OnChange="JavaScript:chkNum0(this)" ></th>
+<th>&nbsp; &nbsp;&nbsp; &nbsp;</th>
+<th>สี&nbsp; &nbsp;</th>
+<th> <input type="text" class="form-control" id="exa_color_box" name="exa_color_box" value="<?php echo $exa_color; ?>" placeholder="">  </th>
+
+<th>&nbsp; &nbsp;&nbsp; &nbsp;</th>
+<th> <button type="button" name = "bt_calc_wage" id = "bt_calc_wage" class="btn btn-primary pull-right" onclick="calc_wage()">คำนวณค่าแรงพิมพ์(WAGE)</button></th>
+<?php
+   // คำนวน ค่าแรงพิมพ์ต่อ 1 สี
+   $cal_wagePrintColor = $print_wage_calc*$man_printer_width*$man_printer_lenght;
+
+
+   $man_wagePrint1Color1 = extract_int($man_wagePrint1Color_real);
+   $man_wagePrint1Color  = number_format($cal_wagePrintColor,2);
+   if($cal_wagePrintColor<1800 && $man_wagePrint1Color1<1800){
+            echo "<script>alert('ค่าแรงพิมพ์ต่อ 1 สี ต้องมีค่าเริ่มต้นที่ 1,800 บาท');</script>";
+
+         $man_wagePrint1Color_real = '1,800.00';
+     }
+
+     if($cal_wagePrintColor>=1800){
+        $man_wagePrint1Color = number_format($cal_wagePrintColor,2);
+        $man_wagePrint1Color_real = $man_wagePrint1Color;
+     }
+
+       if($man_wagePrint1Color_real ==''){
+              $man_wagePrint1Color_real = $man_wagePrint1Color;
+         }
+
+?>
+
+<th>&nbsp; &nbsp;ค่าจริงที่คำนวณได้&nbsp;</th>
+<th> <input type="text" class="form-control" id="man_wagePrint1Color_box" name="man_wagePrint1Color_box" style="width:80px; text-align: right; background: #F9E79F" value="<?php echo $man_wagePrint1Color; ?>">  </th>
+
+<th>&nbsp; &nbsp;ค่าแรงพิมพ์ต่อ 1 สี จริง&nbsp;</th>
+<th> <input type="text" class="form-control" id="man_wagePrint1Color_real_box" name="man_wagePrint1Color_real_box" style="width:80px; text-align: right; background: #4FFF7E" value="<?php echo $man_wagePrint1Color_real; ?>" placeholder="" OnChange="JavaScript:chkNum(this)">  </th>
+
+</thead>
+    </table>
+
+</div>
+    <p>
+    <!-- จบ งานพิมพ์จำนวน -->
+
+    <!-- ค่าแรงพิมพ์ -->
+    <div class="row">
+
+     <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+    <th><font color=red>&nbsp; &nbsp;&nbsp; &nbsp;*</font> ค่าแรงพิมพ์</th>
+
+    <th>&nbsp; &nbsp;&nbsp; &nbsp;<input  id="ch_wage1" name="ch_print_wage" value="3" type="radio" <?php echo $ch_print_wage_value1; ?>>  3.0 </th>
+<th>&nbsp; &nbsp;&nbsp; &nbsp;<input   id="ch_wage2" name="ch_print_wage" value="3.3" type="radio" <?php echo $ch_print_wage_value2; ?>>  3.3</th>
+<th>&nbsp; &nbsp;&nbsp; &nbsp;<input   id="ch_wage3"name="ch_print_wage" value="3.6" type="radio" <?php echo $ch_print_wage_value3; ?>>  3.6</th>
+
+<th>&nbsp; &nbsp;&nbsp; &nbsp;<input   id="ch_wage4" name="ch_print_wage" value="4" type="radio" <?php echo $ch_print_wage_value4; ?>>  อื่น ๆ</th>
+<th><input type="text" class="form-control" style="width:60px;" id="print_wage" name="print_wage" placeholder="" maxlength="3" value="<?php echo $wage_print_value; ?>" onkeypress="return isNumberKey(event)" disabled></th>
+
+<th>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;ค่าแรงพิมพ์&nbsp; &nbsp;</th>
+<th><input type="text" class="form-control"   style="width:150px; text-align: right; background: #F9E79F" id="wage_print_box" name="wage_print_box" value="<?php echo $wage_print_calc; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th><font color=red>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*</font> ค่าแรงพิมพ์จริง&nbsp; &nbsp;</th>
+<th><input type="text" class="form-control" style="width:150px; text-align: right; background: #4FFF7E" id="wage_print_box2" name="wage_print_box2" placeholder="" value="<?php echo $jobs_real_wage_save; ?>" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp; &nbsp;&nbsp;</th>
+<!-- <th><button type="button" name = "bt_calc1" id = "bt_calc1" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Md_confirm_price_wage">ยืนยันราคา</button></th>  -->
+</tr>
+</thead>
+     </table>
+
+    </div>
+
+
+    <!-- End ค่าแรงพิมพ์ -->
+
+
+
+    <!--  พลาสติก กว้าง -->
+    <p>
+    <div class="row">
+
+     <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+    <th>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;พลาสติก&nbsp; &nbsp;&nbsp; &nbsp;</th>
+<th>กว้าง&nbsp; </th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right;" id="exa_plastic_width_box2" name="exa_plastic_width_box2" value="<?php echo $pur_plastic_width; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp; &nbsp;&nbsp; &nbsp;ยาว&nbsp; </th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right;" id="exa_plastic_length_box2" name="exa_plastic_length_box2" value="<?php echo $pur_plastic_length; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp; &nbsp;&nbsp; &nbsp;หนา&nbsp;</th>
+
+<th><input type="text" class="form-control" style="width:80px; text-align: right;" id="exa_plastic_thick_box" name="exa_plastic_thick_box" value="<?php echo $pur_plastic_thick; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp; &nbsp;&nbsp; &nbsp;บริษัท&nbsp;</th>
+<th><input type="text" class="form-control" style="width:150px;" id="exa_company_box" name="exa_company_box" value="<?php echo $pur_company; ?>" placeholder="" ></th>
+
+<th>&nbsp;&nbsp;ราคา</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; background: #F9E79F" id="price_plastic" name="price_plastic" placeholder="" value="<?php echo number_format($pur_plastic_price,2); ?>" OnChange="JavaScript:chkNum(this)"></th>
+<th><font color=red>&nbsp;&nbsp;*</font> ราคาจริง</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; background: #4FFF7E" id="price_plastic2" name="price_plastic2" placeholder="" value="<?php echo number_format($jobs_real_plastic,2); ?>" OnChange="JavaScript:chkNum(this)"></th>
+
+<th>&nbsp; &nbsp;&nbsp; &nbsp;[ <?php echo $pur_checkP; ?> ]</th>
+
+</tr>
+</thead>
+     </table>
+
+    </div>
+    <!-- จบ พลาสติก กว้าง -->
+    <hr>
+     
+     
  </div>
   <!-- สิ้นสุด tab2 -->
 
 
   <div id="tab3" class="tab-pane fade">
-    <h4>  tab 3</h4>
+      
+      <p></p>
+   
+        <div class="row">
+     <div class="col-md-12">
+     <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+    <th>&nbsp;&nbsp;3. เคลือบผิวหน้าแบบ</th>
+<th><input type="text" class="form-control" id="exa_3front1_type_box" name="exa_3front1_type_box" value="<?php echo $exa_3front1_type; ?>" style="width:110px;"  placeholder="" ></th>
+
+<th>&nbsp; &nbsp;&nbsp;ขนาด</th>
+<th>กว้าง</th>
+<th><input type="text" class="form-control" style="width:70px; text-align: right;" id="exa_3front1_width_box" name="exa_3front1_width_box" placeholder=""   value="<?php echo $exa_3front1_width; ?>" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp; &nbsp;&nbsp;ยาว</th>
+<th><input type="text" class="form-control" style="width:70px; text-align: right;" id="exa_3front1_lenght_box" name="exa_3front1_lenght_box" placeholder=""  value="<?php echo $exa_3front1_lenght; ?>" OnChange="JavaScript:chkNum(this)"></th>
+
+
+<th>&nbsp;&nbsp;ราคาเคลือบผิวหน้า</th>
+<th><input type="text" class="form-control"  style="width:100px; text-align: right; background: #F9E79F" id="price_front1" name="price_front1" value="<?php echo $price_front1_calc; ?>" placeholder="" ></th>
+<th><font color=red>&nbsp;&nbsp;*</font> ค่าเคลือบผิวจริง</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_front1R" name="price_front1R" placeholder="" value="<?php echo $jobs_real_Pfront1R_save; ?>" OnChange="JavaScript:chkNum3(this)"></th>
+
+</tr>
+</thead>
+     </table>
+   </div>
+    </div>
+
+    <p>
+
+    <div class="row">
+      <div class="col-md-12">
+     <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+    <th>&nbsp; &nbsp;&nbsp;&nbsp; เคลือบผิวหน้าแบบ</th>
+<th><input type="text" class="form-control" style="width:110px;"  placeholder="" id="exa_3front2_type_box" name="exa_3front2_type_box" value="<?php echo $exa_3front2_type; ?>" ></th>
+
+ <th>&nbsp; &nbsp;&nbsp;ขนาด</th>
+<th>กว้าง</th>
+<td><input type="text" class="form-control" style="width:70px; text-align: right;" id="exa_3front2_width_box" name="exa_3front2_width_box" placeholder=""    value="<?php echo $exa_3front2_width; ?>" OnChange="JavaScript:chkNum(this)"></td>
+<th>&nbsp; &nbsp;&nbsp;ยาว</th>
+<td><input type="text" class="form-control" style="width:70px; text-align: right;" id="exa_3front2_lenght_box" name="exa_3front2_lenght_box" placeholder=""   value="<?php echo $exa_3front2_lenght; ?>" OnChange="JavaScript:chkNum(this)"></td>
+
+
+
+<th>&nbsp;&nbsp;ราคาเคลือบผิวหน้า</th>
+<th><input type="text" class="form-control"  style="width:100px; text-align: right; background: #F9E79F" id="price_front2" name= "price_front2" value="<?php echo $price_front2_calc; ?>" placeholder="" ></th>
+<th><font color=red>&nbsp;&nbsp;*</font> ค่าเคลือบผิวจริง</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_front2R" name= "price_front2R" value="<?php echo $jobs_real_Pfront2R_save; ?>" placeholder="" OnChange="JavaScript:chkNum3(this)" ></th>
+
+</tr>
+</thead>
+     </table>
+    </div>
+    </div>
+
+    <p>
+
+    <div class="row">
+     <div class="col-md-12">
+     <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+    <th> &nbsp; &nbsp; &nbsp;  เคลือบผิวหน้าแบบ</th>
+<th><input type="text" class="form-control" style="width:110px;"  placeholder="" id="exa_3front3_type_box" name="exa_3front3_type_box" value="<?php echo $exa_3front3_type; ?>" ></th>
+
+<th>&nbsp; &nbsp;&nbsp;ขนาด</th>
+<th>กว้าง</th>
+<td><input type="text" class="form-control" style="width:70px; text-align: right;" id="exa_3front3_width_box" name="exa_3front3_width_box" placeholder=""    value="<?php echo $exa_3front3_width; ?>" OnChange="JavaScript:chkNum(this)"></td>
+<th>&nbsp; &nbsp;&nbsp;ยาว</th>
+<td><input type="text" class="form-control" style="width:70px; text-align: right;" id="exa_3front3_lenght_box" name="exa_3front3_lenght_box" placeholder=""   value="<?php echo $exa_3front3_lenght; ?>" OnChange="JavaScript:chkNum(this)"></td>
+
+
+
+<th>&nbsp;&nbsp;ราคาเคลือบผิวหน้า</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="price_front3" name="price_front3" placeholder="" value="<?php echo $price_front3_calc; ?>" OnChange="JavaScript:chkNum(this)"></th>
+<th><font color=red>&nbsp;&nbsp;*</font> ค่าเคลือบผิวจริง</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_front3R" name="price_front3R" placeholder="" value="<?php echo $jobs_real_Pfront3R_save; ?>" OnChange="JavaScript:chkNum3(this)"></th>
+
+</tr>
+</thead>
+     </table>
+    </div>
+    </div>
+
+    <p>
+
+    <div class="row">
+     <div class="col-md-12">
+     <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+    <th>  &nbsp; &nbsp;  &nbsp; เคลือบผิวหน้าแบบ</th>
+<th><input type="text" class="form-control" style="width:110px;"  placeholder="" id="exa_3front4_type_box" name="exa_3front4_type_box" value="<?php echo $exa_3front4_type; ?>" ></th>
+
+ <th>&nbsp; &nbsp;&nbsp;ขนาด</th>
+<th>กว้าง</th>
+<td><input type="text" class="form-control" style="width:70px; text-align: right;" id="exa_3front4_width_box" name="exa_3front4_width_box" placeholder=""   value="<?php echo $exa_3front4_width; ?>" OnChange="JavaScript:chkNum(this)"></td>
+<th>&nbsp; &nbsp;&nbsp;ยาว</th>
+<td><input type="text" class="form-control" style="width:70px; text-align: right;" id="exa_3front4_lenght_box" name="exa_3front4_lenght_box" placeholder=""   value="<?php echo $exa_3front4_lenght; ?>" OnChange="JavaScript:chkNum(this)"></td>
+
+
+
+<th>&nbsp;&nbsp;ราคาเคลือบผิวหน้า</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="price_front4" name="price_front4" placeholder="" value="<?php echo $price_front4_calc; ?>" OnChange="JavaScript:chkNum(this)"></th>
+<th><font color=red>&nbsp;&nbsp;*</font> ค่าเคลือบผิวจริง</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_front4R" name="price_front4R" placeholder="" value="<?php echo $jobs_real_Pfront4R_save; ?>" OnChange="JavaScript:chkNum3(this)"></th>
+
+<!-- <th> &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" name = "bt_confirm_price_front" id = "bt_confirm_price_front" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Md_confirm_price_front">ยืนยันราคา</button>
+          </th>  -->
+</tr>
+</thead>
+     </table>
+
+
+
+    </div>
+    </div>
+
+    <p>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+      &nbsp;&nbsp;  <button type="button" name = "bt_calc_front" id = "bt_calc_front" class="btn btn-primary"  >คำนวณค่าเคลือบผิวหน้า</button>
+        </div>
+    </div>
+
+    <p>
+
+
+       <hr>
+      
   </div>
    <!-- สิ้นสุด tab3 -->
 
    <div id="tab4" class="tab-pane fade">
-     <h4>  tab 4</h4>
+       
+       <p></p>
+     
+        <div class="row">
+
+     <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. ลูกฟูก</th>
+<th><input type="text" class="form-control" style="width:60px; text-align: right;" id="factor_lf_box" name="factor_lf_box" value="<?php echo $man_factor_lf; ?>" placeholder="" ></th>
+<th>&nbsp; ราคาต่อตารางฟุต</th>
+<th> &nbsp;&nbsp;กว้าง</th>
+<th><input disabled type="text" class="form-control" style="width:70px; text-align: right;" id="lf_width_box" name="lf_width_box" value="<?php echo $exa_4LF_width; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th> &nbsp;&nbsp;ยาว</th>
+<th><input disabled type="text" class="form-control" style="width:70px; text-align: right;" id="lf_length_box" name="lf_length_box" value="<?php echo $exa_4LF_lenght; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+<th> &nbsp;&nbsp;จำนวน</th>
+<th><input disabled type="text" class="form-control" style="width:40px; text-align: right;" id="amount_layer_box" name="amount_layer_box" value="<?php echo $exa_4LF_layer; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp;ชั้น</th>
+
+<th>&nbsp; &nbsp;ชนิดลูกฟูก</th>
+<th><input type="text" class="form-control" style="width:220px; text-align: right; background: #F9E79F" id="man_TypeLF_box" name="man_TypeLF_box" value="<?php echo $sales_4LF_type; ?>" placeholder="" ></th>
+
+<th>&nbsp; &nbsp;&nbsp;ค่าลูกฟูก</th>
+<th><input type="text" class="form-control" style="width:70px; text-align: right; background: #F9E79F" id="lf_price_box" name="lf_price_box" value="<?php echo $lf_price_calc; ?>" placeholder="" ></th>
+
+<th><font color=red>&nbsp; &nbsp;&nbsp;*</font> ค่าลูกฟูกจริง</th>
+<th><input type="text" class="form-control" style="width:70px; text-align: right; background: #4FFF7E" id="lf_price_box2" name="lf_price_box2" placeholder="" value="<?php echo $jobs_real_lf_price; ?>" OnChange="JavaScript:chkNum(this)"></th>
+
+</tr>
+</thead>
+     </table>
+
+    </div>
+
+    <p>
+
+
+    <p>
+
+
+
+<div class="row">
+
+     <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+    <th>  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;LAMINATE</th>
+<th>&nbsp;&nbsp;<input id ="check_lami_factor1" name ="check_lami_factor" type="radio" value="0.15" <?php echo $ch_lami_factor_value1; ?>>  0.15 </th>
+<th>&nbsp;&nbsp;<input id ="check_lami_factor2" name ="check_lami_factor" type="radio" value="0.18" <?php echo $ch_lami_factor_value2; ?>>  0.18</th>
+<th>&nbsp;&nbsp;<input id ="check_lami_factor3" name ="check_lami_factor" type="radio" value="0.20" <?php echo $ch_lami_factor_value3; ?>>  0.20</th>
+<th>&nbsp;&nbsp;<input id ="check_lami_factor4" name ="check_lami_factor" type="radio" value="4" <?php echo $ch_lami_factor_value4; ?>>  อื่น ๆ</th>
+<th><input disabled type="text" class="form-control" style="width:60px;" id="factor_lami_box" name="factor_lami_box" value="<?php echo $factor_lami_box_value; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+ <th>  &nbsp; &nbsp;&nbsp;ค่า LAMINATE</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="lami_price_box" name="lami_price_box" value="<?php echo $lami_price_calc; ?>" placeholder="" > </th>
+<th><font color=red>&nbsp;&nbsp;*</font> ค่า LAMINATE จริง</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="lami_price_box2" name="lami_price_box2" value="<?php echo $jobs_real_lami_price; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<!-- <th> &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" name = "bt_confirm_price_4" id = "bt_confirm_price_4" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Md_confirm_price_4">ยืนยันราคา</button>
+          </th>  -->
+</tr>
+</thead>
+     </table>
+
+    </div>
+
+    <p>
+
+         <div class="row">
+          &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;     <button type="button" name = "bt_calc_lf" id = "bt_calc_lf" class="btn btn-primary"  >คำนวณราคาลูกฟูก</button>
+        </div>
+
+    <div class="row">
+
+     <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+
+ <th>  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;B ลูกฟูก</th>
+<th>&nbsp;&nbsp;<input id ="check_Blf_factor1" name ="check_Blf_factor" type="radio" value="1" <?php echo $check_Blf_factor1; ?>>  1 </th>
+<th>&nbsp;&nbsp;<input id ="check_Blf_factor2" name ="check_Blf_factor" type="radio" value="2" <?php echo $check_Blf_factor2; ?>>  2</th>
+<th>&nbsp;&nbsp;<input id ="check_Blf_factor3" name ="check_Blf_factor" type="radio" value="3" <?php echo $check_Blf_factor3; ?>>  3</th>
+
+ <th>&nbsp; &nbsp;&nbsp;ราคา</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right;" id="exa_Bluk_box" name="exa_Bluk_box" value="<?php echo $pur_Bluk; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp; บาท/กล่อง</th>
+<th>&nbsp; &nbsp;&nbsp;</th>
+<th>&nbsp; &nbsp;&nbsp;บรรจุลังละ</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right;" id="exa_bluk_pack_box" name="exa_bluk_pack_box" value="<?php echo $exa_bluk_pack; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp;กล่อง</th>
+
+<th>&nbsp;&nbsp;ค่า B ลูกฟูก</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="Blf_price_box" name="Blf_price_box" value="<?php echo $Blf_price_calc; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+<th><font color=red>&nbsp;&nbsp;*</font> ค่า B ลูกฟูกจริง</th>
+<th><input type="text" class="form-control" style="width:150px; text-align: right; background: #4FFF7E" id="Blf_price_box2" name="Blf_price_box2" value="<?php echo $jobs_real_Blf_price; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+
+</tr>
+</thead>
+     </table>
+
+    </div>
+
+
+    <p>
+
+    <div class="row">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <button type="button" name = "bt_calc_B_lf" id = "bt_calc_B_lf" class="btn btn-primary"  >คำนวณราคา B ลูกฟูก</button>
+    </div>
+
+
+    <hr>
+       
    </div>
     <!-- สิ้นสุด tab4 -->
 
 
     <div id="tab5" class="tab-pane fade">
-      <h4>  tab 5</h4>
+        
+        <p></p>
+      
+         <div class = "row">
+   <div class="col-md-12">
+
+   <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+    <th>  &nbsp; &nbsp;5. ฟอยล์</th>
+    <th>&nbsp;&nbsp;<input id ="check_paperF_factor1" name ="check_paperf_factor" type="radio" value="0.25" <?php echo $man_checkFf1; ?>>  0.25 </th>
+<th>&nbsp;&nbsp;<input id ="check_paperF_factor2" name ="check_paperf_factor" type="radio" value="0.30" <?php echo $man_checkFf2; ?>>  0.30</th>
+<th>&nbsp;&nbsp;<input id ="check_paperF_factor3" name ="check_paperf_factor" type="radio"value="0.35" <?php echo $man_checkFf3; ?>>  0.35</th>
+<th>&nbsp;&nbsp;<input id ="check_paperF_factor4" name ="check_paperf_factor" type="radio"value="0.40" <?php echo $man_checkFf4; ?>>  0.40</th>
+<th>&nbsp;&nbsp;<input id ="check_paperF_factor5" name ="check_paperf_factor" type="radio"value="อื่น ๆ" <?php echo $man_checkFf5; ?>>  อื่น ๆ</th>
+<th><input disabled type="text" class="form-control" style="width:60px;" id="factor_paperF_box" name="factor_paperF_box" value="<?php echo $man_factor_paperF; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+<th>&nbsp;&nbsp;</th>
+<th>  &nbsp; &nbsp;ค่าบวกปั๊มเค</th>
+<th>&nbsp;&nbsp;<input id ="check_plusPK_factor1" name ="check_plusPK_factor" type="radio" value="1" <?php echo $man_checkPlusPK1; ?>>  1% </th>
+<th>&nbsp;&nbsp;<input id ="check_plusPK_factor2" name ="check_plusPK_factor" type="radio" value="1.05" <?php echo $man_checkPlusPK2; ?>>  5%</th>
+<th>&nbsp;&nbsp;<input id ="check_plusPK_factor3" name ="check_plusPK_factor" type="radio" value="1.10" <?php echo $man_checkPlusPK3; ?>>  10%</th>
+</tr>
+</thead>
+     </table>
+
+        <p>
+
+<table data-toggle="table" data-striped="true">
+
+
+ <thead>
+<tr>
+<th>&nbsp;&nbsp;</th>
+<th>&nbsp;&nbsp;</th>
+<th>ปั้มเค </th>
+<th>1 ก.</th>
+<th><input type="text" class="form-control" style="width:65px; text-align: right;" name="exa_R1KA_box" id="exa_R1KA_box" value="<?php echo number_format($exa_R1A,2); ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp;&nbsp;ย.</th>
+<th><input type="text" class="form-control" style="width:65px; text-align: right;" name="exa_R1KY_box" id="exa_R1KY_box" value="<?php echo number_format($exa_R1AY,2); ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+<th>&nbsp;&nbsp;ค่าปั๊มเค</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; background: #F9E79F" id="price_R1PK_box" name="price_R1PK_box" value="<?php echo $price_R1PK_calc; ?>" placeholder="" </th>
+<th>&nbsp;&nbsp;ค่าปั๊มเค</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; background: #4FFF7E" id="price_R1PK2_box" name="price_R1PK2_box" value="<?php echo $jobs_real_price_R1PK2; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+<th>&nbsp;&nbsp;ปั้มเค </th>
+<th>2 ก.</th>
+<th><input type="text" class="form-control" style="width:65px; text-align: right;" name="exa_R2KA_box" id="exa_R2KA_box" value="<?php echo number_format($exa_R2A,2); ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp;&nbsp;ย.</th>
+<th><input type="text" class="form-control" style="width:65px; text-align: right;" name="exa_R2KY_box" id="exa_R2KY_box" value="<?php echo number_format($exa_R2Y,2); ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+<th>&nbsp;&nbsp;ค่าปั๊มเค</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; background: #F9E79F" id="price_R2PK_box"  name="price_R2PK_box" placeholder="" value="<?php echo $price_R2PK_calc; ?>" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp;&nbsp;ค่าปั๊มเค</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; background: #4FFF7E" id="price_R2PK2_box"  name="price_R2PK2_box" value="<?php echo $jobs_real_price_R2PK2; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+
+</tr>
+</thead>
+
+
+
+<tbody>
+<tr>
+
+<th>&nbsp;&nbsp;</th>
+<th>&nbsp;&nbsp;</th>
+<th>ปั้มเค </th>
+<th>3 ก.</th>
+<th><input type="text" class="form-control" style="width:65px; text-align: right;" name="exa_R3KA_box" id="exa_R3KA_box" value="<?php echo number_format($exa_R3A,2); ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp;&nbsp;ย.</th>
+<th><input type="text" class="form-control" style="width:65px; text-align: right;" name="exa_R3KY_box" id="exa_R3KY_box" value="<?php echo number_format($exa_R3Y,2); ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+<th>&nbsp;&nbsp;ค่าปั๊มเค</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; background: #F9E79F" id="price_R3PK_box" name="price_R3PK_box" placeholder="" value="<?php echo $price_R3PK_calc; ?>" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp;&nbsp;ค่าปั๊มเค</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; background: #4FFF7E" id="price_R3PK2_box" name="price_R3PK2_box" value="<?php echo $jobs_real_price_R3PK2; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+<th>&nbsp;&nbsp;ปั้มเค </th>
+<th>4 ก.</th>
+<th><input type="text" class="form-control" style="width:65px; text-align: right;" name="exa_R4KA_box" id="exa_R4KA_box" value="<?php echo number_format($exa_R4A,2); ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp;&nbsp;ย.</th>
+<th><input type="text" class="form-control" style="width:65px; text-align: right;" name="exa_R4KY_box" id="exa_R4KY_box" value="<?php echo number_format($exa_R4AY,2); ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+<th>&nbsp;&nbsp;ค่าปั๊มเค</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; background: #F9E79F" id="price_R4PK_box" name="price_R4PK_box" placeholder="" value="<?php echo $price_R4PK_calc; ?>" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp;&nbsp;ค่าปั๊มเค</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; background: #4FFF7E" id="price_R4PK2_box" name="price_R4PK2_box" value="<?php echo $jobs_real_price_R4PK2; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+
+</tr>
+
+
+</tbody>
+</table>
+
+<!--   รวมค่าปั๊มเค   -->
+
+<table data-toggle="table" data-striped="true">
+
+    <thead>
+
+
+             <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รวมค่าปั๊มเค</th>
+             <th><input type="text" class="form-control" style="width:80px; text-align: right; background: #F9E79F" id="total_price_PK_box" name="total_price_PK_box" placeholder="" value="<?php echo $man_total_price_PK; ?>" OnChange="JavaScript:chkNum(this)"></th>
+             <th>&nbsp;&nbsp;รวมค่าปั๊มเคจริง</th>
+             <th><input type="text" class="form-control" style="width:80px; text-align: right; background: #4FFF7E" id="total_price_PKR_box" name="total_price_PKR_box" value="<?php echo $man_total_price_PKR; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+    </thead>
+
+</table>
+
+<p></p>
+
+
+
+<!--  ค่านูน 3 -->
+
+<table data-toggle="table" data-striped="true">
+    <tbody>
+<tr>
+<th>ปั๊มนูน จำนวน</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; " id="man_PN_amount_box" name="man_PN_amount_box" placeholder="" value="<?php echo $exa_PN_amount; ?>" ></th>
+<th>&nbsp;รอบ</th>
+
+<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รวมค่าปั๊มนูน</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; background: #FFCCFF" id="man_total_PN_box" name="man_total_PN_box" placeholder="" value="<?php echo $man_total_price_PN; ?>" ></th>
+
+<th>&nbsp;&nbsp;รวมค่าปั๊มนูนจริง</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; background: #9999FF" id="man_total_PNR_box" name="man_total_PNR_box" value="<?php echo $man_total_PNR; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+
+<!--  จบ ค่านูน 3 -->
+
+
+<td></td>
+<th></th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ปั๊มขาด จำนวน</th>
+<th><input type="text" class="form-control" style="width:80px; text-align: right; " id="man_PK_amount_box" name="man_PK_amount_box" placeholder="" value="<?php echo $exa_PY_amount; ?>" ></th>
+<th>&nbsp;รอบ</th>
+
+<th>  &nbsp; &nbsp;&nbsp;ค่าปั๊มขาด</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #CCFFFF" id="price_PY_box" name="price_PY_box" placeholder="" value="<?php echo $price_PY_calc;?>"> </th>
+<th><font color=red>&nbsp;&nbsp;*</font> ค่าปั๊มขาดจริง</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #6699FF" id="price_PY_box2" name="price_PY_box2" placeholder="" value="<?php echo $jobs_real_price_PY;?>" ></th>
+
+<!-- <th> &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" name = "bt_confirm_price_5" id = "bt_confirm_price_5" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Md_confirm_price_5">ยืนยันราคา</button>
+          </th>   -->
+</tr>
+
+
+</tbody>
+</table>
+
+ <p>
+
+<!--   ค่าแรงกระทุ้ง   -->
+
+<table data-toggle="table" data-striped="true">
+
+    <thead>
+
+
+             <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ค่าแรงกระทุ้ง</th>
+             <th><input type="text" class="form-control" style="width:120px; text-align: right; background: #F9E79F" id="man_kratung_Wprice_box" name="man_kratung_Wprice_box" placeholder="" value="<?php echo $man_kratung_Wprice; ?>" OnChange="JavaScript:chkNum3(this)"></th>
+
+              <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ค่าแรงกระทุ้งจริง</th>
+             <th><input type="text" class="form-control" style="width:120px; text-align: right; background: #6699FF" id="man_kratung_Wprice_box2" name="man_kratung_Wprice_box2" placeholder="" value="<?php echo $man_kratung_Wprice_real; ?>" OnChange="JavaScript:chkNum3(this)"></th>
+
+    </thead>
+
+</table>
+<!--   จบ ค่าแรงกระทุ้ง   -->
+    </div>
+</div>
+
+    <p>
+
+     <div class="row">
+       &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<button type="button" name = "bt_calc_price_pum" id = "bt_calc_price_pum" class="btn btn-primary"  >คำนวณราคาปั๊ม</button>
+    </div>
+
+    <!--   จบ ข้อ 5 -->
+
+
+
+ 
+
+    <hr>
+
+        
+        
     </div>
      <!-- สิ้นสุด tab5 -->
 
      <div id="tab6" class="tab-pane fade">
-      <h4>  tab 6</h4>
+         <p></p>
+                              <table data-toggle="table" data-striped="true">
+                    <thead>
+                    <tr>
+                        <th> &nbsp;&nbsp; 6. ติดกาว </th>
+
+
+                    <th>  <font color=red>&nbsp;&nbsp;*&nbsp;</font>ค่าแรงปะมือ</th>
+                    <th><input <?php echo $exa_pm_temp; ?> type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_wage_PM_box" name="price_wage_PM_box" value="<?php echo $man_price_wage_PM; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"> </th>
+                    <th><font color=red>&nbsp;&nbsp;*</font> ค่าแรงปะเครื่อง</th>
+                    <th><input <?php echo $exa_pk_temp; ?> type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_wage_PK_box" name="price_wage_PK_box" value="<?php echo $man_price_wage_PK; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+
+
+                    </thead>
+                             </table>
+         
+         <hr>
     </div>
      <!-- สิ้นสุด tab6 -->
 
@@ -3369,37 +3949,406 @@ function chkEvent(e) {
      <!-- สิ้นสุด tab7 -->
 
      <div id="tab8" class="tab-pane fade">
-      <h4>  tab 8</h4>
+             <p>
+    
+    <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+
+ <th>&nbsp;&nbsp; 8. ค่าขนส่ง</th>
+
+
+ <th>&nbsp;&nbsp;<input id ="check_logis_factor2" name ="check_logis_factor" type="radio" value="1000" <?php echo $man_check_logis2; ?>>  1000</th>
+<th>&nbsp;&nbsp;<input id ="check_logis_factor3" name ="check_logis_factor" type="radio" value="1200" <?php echo $man_check_logis3; ?>>  1200</th>
+<th>&nbsp;&nbsp;<input id ="check_logis_factor4" name ="check_logis_factor" type="radio" value="1500" <?php echo $man_check_logis4; ?>>  1500</th>
+<th>&nbsp;&nbsp;<input id ="check_logis_factor5" name ="check_logis_factor" type="radio" value="3000" <?php echo $man_check_logis5; ?>>  3000</th>
+
+ <th>&nbsp; &nbsp;&nbsp;นน. กระดาษ</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="paper_weight_box" name="paper_weight_box" value="<?php echo $man_paper_weight; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp; </th>
+<th>&nbsp; &nbsp;&nbsp;</th>
+<th>&nbsp; &nbsp;&nbsp;ค่าขนส่ง</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="price_logis_box" name="price_logis_box" value="<?php echo $price_logis_calc; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+<th>&nbsp;</th>
+
+<th>&nbsp; &nbsp;&nbsp;<font color=red>&nbsp;&nbsp;*&nbsp;</font>ค่าขนส่งจริง</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_logis_box2" name="price_logis_box2" value="<?php echo $jobs_real_price_logis; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+
+<!-- <th> &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" name = "bt_confirm_price_logis" id = "bt_confirm_price_logis" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Md_confirm_price_logis">ยืนยันราคา</button>
+          </th>  -->
+
+</tr>
+</thead>
+     </table>
+             
+        <div class="row">
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <button type="button" name = "bt_calc_logis" id = "bt_calc_logis" class="btn btn-primary"  >คำนวณค่าขนส่ง</button>
+    </div>
+    
     </div>
      <!-- สิ้นสุด tab8 -->
 
      <div id="tab9" class="tab-pane fade">
-      <h4>  tab 9</h4>
+         <p></p>
+              <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+    <th>&nbsp;&nbsp; 9. ค่าวัสดุพิเศษอื่น ๆ </th>
+
+
+
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_mat_special_box" name="price_mat_special_box" value="<?php echo $man_price_mat_special; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"> </th>
+<th>&nbsp;&nbsp; ค่าห่อ</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_hor_box" name="price_hor_box" value="<?php echo  $man_price_hor; ?>" placeholder="" OnChange="JavaScript:chkNum(this)" ></th>
+
+
+<th>  &nbsp; &nbsp;&nbsp;ค่าแกะ</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_kea_box" name="price_kea_box" value="<?php echo  $man_price_kea; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"> </th>
+
+
+</thead>
+     </table>
+         
+         <hr>
     </div>
      <!-- สิ้นสุด tab9 -->
 
      <div id="tab10" class="tab-pane fade">
-      <h4>  tab 10</h4>
+         <p></p>
+      
+          <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+    <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10. จำนวนเพลท </th>
+
+<th><input type="text" class="form-control" style="width:50px; text-align: right;" id="pur_price_plate_box" name="pur_price_plate_box" value="<?php echo $pur_price_plate; ?>" placeholder="" ></th>
+
+<th> &nbsp;&nbsp; ค่าเพลท</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="plate_price_box" name="plate_price_box" value="<?php echo $plate_price_calc; ?>" placeholder="" > </th>
+<th><font color=red>&nbsp;&nbsp;*</font> ค่าเพลทจริง</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="plate_price_box2" name="plate_price_box2" placeholder="" value="<?php echo $jobs_real_plate_price; ?>" OnChange="JavaScript:chkNum(this)"></th>
+
+<th> &nbsp;&nbsp; 11.&nbsp;  แบบปั๊ม</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; " id="pur_Ptype_box" name="pur_Ptype_box"  value="<?php echo $pur_lay3; ?>" placeholder="" > </th>
+
+<th> &nbsp;&nbsp; ค่าแบบปั๊ม</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="pur_pricePtype_box" name="pur_pricePtype_box"  value="<?php echo $pur_pricePtype_calc; ?>" placeholder="" > </th>
+
+<th><font color=red>&nbsp;&nbsp;*</font> ค่าแบบปั๊มจริง</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="pur_pricePtype_box2" name="pur_pricePtype_box2" value="<?php echo $jobs_real_pur_pricePtype; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<!-- <th> &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" name = "bt_confirm_price_10" id = "bt_confirm_price_10" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Md_confirm_price_10">ยืนยันราคา</button>
+          </th>  -->
+
+</thead>
+     </table>
+         <p>
+           <div class="row">
+         <div class="col-md-12">
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="button" name = "bt_calc_plate" id = "bt_calc_plate" class="btn btn-primary"  >คำนวณราคาค่าเพลท ค่าแบบปั๊ม</button>
+       </div>
+       </div>
+         
+         
+         <hr>
     </div>
      <!-- สิ้นสุด tab10 -->
 
      <div id="tab11" class="tab-pane fade">
-      <h4>  tab 11</h4>
+         
+         <p></p>
+   
+         <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+
+<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.1 ค่าแบบกระทุ้ง</th>
+ <?php
+              $man_Kratung_price_real_temp = extract_int($man_Kratung_price_real);
+                 if($man_Kratung_price_real_temp<2000){
+                             $kratung_price_temp = (($pur_lay3*100)+1000);
+                              if($kratung_price_temp<2000 && $exa_kratung!=''){
+                                  echo "<script type='text/javascript'>alert('ค่าแบบกระทุ้ง ต้องมีค่าเริ่มต้นที่ 2,000 บาท');</script>";
+
+                                  $kratung_price_temp = '2,000.000';
+                              }else{
+                                  $kratung_price_temp = number_format($kratung_price_temp,3);
+                              }
+                 }else{
+                   $kratung_price_temp =   $man_Kratung_price_real;
+                 }
+
+ ?>
+
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="man_Kratung_price_box2" name="man_Kratung_price_box2" placeholder="" value="<?php if($exa_kratung!=''){echo $kratung_price_temp;}else{echo '';} ?>" OnChange="JavaScript:chkNum3(this)"></th>
+
+
+
+</thead>
+     </table>
+         
+         <hr>
+         
     </div>
      <!-- สิ้นสุด tab11 -->
 
      <div id="tab12" class="tab-pane fade">
-      <h4>  tab 12</h4>
+         
+         <p></p>
+      
+                 <div class = "row">
+
+                          <div class="col-md-8">
+
+                        <table data-toggle="table" data-striped="true">
+                        <thead>
+                        <tr>
+                        <th></th>
+                        <th></th>
+                        <th>12. ค่าบล็อคปั้มนูน</th>
+                        <th>&nbsp;รอบ1 ก.</th>
+                        <th><input   id="R1_width" name="R1_width" type="text" class="form-control" style="width:60px; text-align: right;"  value="<?php echo number_format($exa_PN_R1A,2); ?>" placeholder="" ></th>
+                        <th>&nbsp;&nbsp;ย.</th>
+                        <th><input  id="R1_lenght" name="R1_lenght" type="text" class="form-control" style="width:60px; text-align: right;"  value="<?php echo number_format($exa_PN_R1Y,2); ?>" placeholder="" ></th>
+
+                        <th>  &nbsp;&nbsp;ค่าบล็อกปั๊มนูน </th>
+                        <th><input disabled type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="pur_pricePN1_box" name="pur_pricePN1_box"  placeholder=""  value="<?php echo $pur_priceBoxPN1; ?>" OnChange="JavaScript:chkNum(this)"></th>
+                        <th><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font> ค่าบล็อกปั๊มนูนจริง</th>
+                        <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="pur_priceBoxPN1R_box" name="pur_priceBoxPN1R_box" value="<?php echo $man_real_priceBoxPN1; ?>" placeholder=""  ></th>
+
+
+                        </tr>
+
+                        </thead>
+
+
+                        <tbody>
+                        <tr>
+                        <td></td>
+                        <th></th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <th>รอบ2 ก.</th>
+                        <th><input  id="R2_width" name="R2_width" type="text" class="form-control" style="width:60px; text-align: right;"  value="<?php echo number_format($exa_PN_R2A,2); ?>" placeholder="" ></th>
+                        <th>&nbsp;&nbsp;ย.</th>
+                        <th><input  id="R2_lenght" name="R2_lenght" type="text" class="form-control" style="width:60px; text-align: right;"  value="<?php echo number_format($exa_PN_R2Y,2); ?>" placeholder="" ></th>
+
+                        <th>  &nbsp;&nbsp;ค่าบล็อกปั๊มนูน </th>
+                        <th><input disabled type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="pur_pricePN2_box" name="pur_pricePN2_box"  placeholder=""  value="<?php echo $pur_priceBoxPN2; ?>" OnChange="JavaScript:chkNum(this)"></th>
+                        <th><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font> ค่าบล็อกปั๊มนูนจริง</th>
+                        <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="pur_priceBoxPN2R_box" name="pur_priceBoxPN2R_box" value="<?php echo $man_real_priceBoxPN2; ?>" placeholder=""  ></th>
+
+                        </tr>
+                        <tr>
+                        <td></td>
+                         <th></th>
+                        <th> </th>
+                        <th>รอบ3 ก.</td>
+                        <th><input  id="R3_width" name="R3_width" type="text" class="form-control" style="width:60px; text-align: right;"  value="<?php echo number_format($exa_PN_R3A,2); ?>" placeholder="" ></th>
+                        <th>&nbsp;&nbsp;ย.</td>
+                        <th><input  id="R3_lenght" name="R3_lenght" type="text" class="form-control" style="width:60px; text-align: right;"  value="<?php echo number_format($exa_PN_R3Y,2); ?>" placeholder="" ></th>
+
+
+                        <th>  &nbsp;&nbsp;ค่าบล็อกปั๊มนูน </th>
+                        <th><input disabled type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="pur_pricePN3_box" name="pur_pricePN3_box"  placeholder=""  value="<?php echo $pur_priceBoxPN3; ?>" OnChange="JavaScript:chkNum(this)"></th>
+                        <th><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font> ค่าบล็อกปั๊มนูนจริง</th>
+                        <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="pur_priceBoxPN3R_box" name="pur_priceBoxPN3R_box" value="<?php echo $man_real_priceBoxPN3; ?>" placeholder="" ></th>
+
+                        </tr>
+
+
+
+                        </tbody>
+                        </table>
+
+
+                           <table data-toggle="table" data-striped="true">
+                                <tbody>
+                                        <tr>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รวมค่าบล็อกปั๊มนูน</th>
+                                        <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #FFCCFF" id="total_price_BPN_box" name="total_price_BPN_box" placeholder="" value="<?php echo number_format((extract_int($pur_priceBoxPN1)+extract_int($pur_priceBoxPN2)+extract_int($pur_priceBoxPN3)),2); ?>" OnChange="JavaScript:chkNum(this)"></th>
+                                        <th>&nbsp;&nbsp;รวมค่าบล็อกปั๊มนูนจริง</th>
+                                        <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #9999FF" id="total_price_BPNR_box" name="total_price_BPNR_box" value="<?php echo number_format((extract_int($man_real_priceBoxPN1)+extract_int($man_real_priceBoxPN2)+extract_int($man_real_priceBoxPN3)),2); ?>" placeholder="" ></th>
+
+
+                                        </tr>
+
+
+                            </tbody>
+                            </table>
+
+
+
+
+
+
+                          </div>
+
+
+
+                        </div>
+
+
+       <P>
+
+       <p>
+      <hr>
+         
     </div>
      <!-- สิ้นสุด tab12 -->
 
      <div id="tab13" class="tab-pane fade">
-      <h4>  tab 13</h4>
+         
+         <p></p>
+     
+         <div class = "row">
+
+                          <div class="col-md-12">
+
+                        <table data-toggle="table" data-striped="true">
+                        <thead>
+                        <tr>
+                        <th></th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13.</th>
+                        <th>ค่าบล็อคปั้มเค</th>
+                        <th>&nbsp;รอบ1 ก.&nbsp;</th>
+                        <th><input    id="13R1_width" name="13R1_width" type="text" class="form-control" style="width:80px; text-align: right;"  value="<?php echo number_format($exa_R1A,2); ?>" placeholder="" ></th>
+                        <th>&nbsp;&nbsp;ย.</th>
+                        <th><input   id="13R1_lenght" name="13R1_lenght" type="text" class="form-control" style="width:80px; text-align: right;"  value="<?php echo number_format($exa_R1AY,2); ?>" placeholder="" ></th>
+                        <th>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;ค่าบล็อคปั้มเค&nbsp; </th>
+                        <th><input  disabled type="text" class="form-control" style="width:100px; text-align: right;" id="pur_pricePumK1_box" name="pur_pricePumK1_box" value="<?php echo $pur_priceBoxPumK1; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+                        <th><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font> ค่าบล็อกปั๊มเคจริง</th>
+                        <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="pur_priceBoxPK1R_box" name="pur_priceBoxPK1R_box" value="<?php echo $man_real_priceBoxPK1; ?>" placeholder="" ></th>
+
+
+                        </tr>
+                        <tr>
+                        <td></td>
+                        <td></td>
+                        <th> </th>
+                        <th>&nbsp;&nbsp;รอบ2 ก.</th>
+                        <th><input   id="13R2_width" name="13R2_width" type="text" class="form-control" style="width:80px; text-align: right;"  value="<?php echo number_format($exa_R2A,2); ?>" placeholder="" ></th>
+                        <th>&nbsp;&nbsp;ย.</th>
+                        <th><input   id="13R2_lenght" name="13R2_lenght" type="text" class="form-control" style="width:80px; text-align: right;"  value="<?php echo number_format($exa_R2Y,2); ?>" placeholder="" ></th>
+                        <th>&nbsp; &nbsp;&nbsp;&nbsp;ค่าบล็อคปั้มเค&nbsp; </th>
+                        <td><input  disabled type="text" class="form-control" style="width:100px; text-align: right;" id="pur_pricePumK2_box" name="pur_pricePumK2_box" value="<?php echo $pur_priceBoxPumK2; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></td>
+                        <th><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font> ค่าบล็อกปั๊มเคจริง</th>
+                        <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="pur_priceBoxPK2R_box" name="pur_priceBoxPK2R_box" value="<?php echo $man_real_priceBoxPK2; ?>" placeholder="" ></th>
+
+
+
+
+                        </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+
+                        <tr>
+                        <td></td>
+                        <th></th>
+                        <th> </th>
+                        <th>&nbsp;รอบ3 ก.</td>
+                        <th><input   id="13R3_width" name="13R3_width" type="text" class="form-control" style="width:80px; text-align: right;"  value="<?php echo number_format($exa_R3A,2); ?>" placeholder="" ></th>
+                        <th>&nbsp;&nbsp;ย.</td>
+                        <th><input   id="13R3_lenght" name="13R3_lenght" type="text" class="form-control" style="width:80px; text-align: right;"  value="<?php echo number_format($exa_R3Y,2); ?>" placeholder="" ></th>
+                        <th>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;ค่าบล็อคปั้มเค&nbsp; </th>
+                        <td><input  disabled type="text" class="form-control" style="width:100px; text-align: right;" id="pur_pricePumK3_box" name="pur_pricePumK3_box" value="<?php echo $pur_priceBoxPumK3; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></td>
+                        <th><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font> ค่าบล็อกปั๊มเคจริง</th>
+                        <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="pur_priceBoxPK3R_box" name="pur_priceBoxPK3R_box" value="<?php echo $man_real_priceBoxPK3; ?>" placeholder="" ></th>
+
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                        <th></th>
+                        <th> </th>
+                        <th>&nbsp;&nbsp;รอบ4 ก.</td>
+                        <th><input   id="13R4_width" name="13R4_width" type="text" class="form-control" style="width:80px; text-align: right;"  value="<?php echo number_format($exa_R4A,2); ?>" placeholder="" ></th>
+                        <th>&nbsp;&nbsp;ย.</td>
+                        <th><input   id="13R4_lenght" name="13R4_lenght" type="text" class="form-control" style="width:80px; text-align: right;"  value="<?php echo number_format($exa_R4AY,2); ?>" placeholder="" ></th>
+                        <th>&nbsp; &nbsp;&nbsp;&nbsp;ค่าบล็อคปั้มเค&nbsp; </th>
+                        <td><input   disabled type="text" class="form-control" style="width:100px; text-align: right;" id="pur_pricePumK4_box" name="pur_pricePumK4_box" value="<?php echo $pur_priceBoxPumK4; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></td>
+                        <th><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font> ค่าบล็อกปั๊มเคจริง</th>
+                        <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="pur_priceBoxPK4R_box" name="pur_priceBoxPK4R_box" value="<?php echo $man_real_priceBoxPK4; ?>" placeholder="" ></th>
+
+
+                        </tr>
+
+
+
+
+                        </tbody>
+                        </table>
+
+                       <table data-toggle="table" data-striped="true">
+                                <tbody>
+                                        <tr>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รวมค่าบล็อกปั๊มเค</th>
+                                        <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #FFCCFF" id="total_price_BPN_box" name="total_price_BPN_box" placeholder="" value="<?php echo number_format((extract_int($pur_priceBoxPumK1)+extract_int($pur_priceBoxPumK2)+extract_int($pur_priceBoxPumK3)+extract_int($pur_priceBoxPumK4)),2); ?>" OnChange="JavaScript:chkNum(this)"></th>
+                                        <th>&nbsp;&nbsp;รวมค่าบล็อกปั๊มเคจริง</th>
+                                        <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #9999FF" id="total_price_BPKR_box" name="total_price_BPKR_box" value="<?php echo number_format((extract_int($man_real_priceBoxPK1)+extract_int($man_real_priceBoxPK2)+extract_int($man_real_priceBoxPK3)+extract_int($man_real_priceBoxPK4)),2); ?>" placeholder=""></th>
+
+
+                                        </tr>
+
+
+                            </tbody>
+                            </table>
+
+
+
+
+
+                          </div>
+
+
+
+                        </div>
+         <hr>
+         
     </div>
      <!-- สิ้นสุด tab13 -->
 
      <div id="tab14" class="tab-pane fade">
-      <h4>  tab 14</h4>
+         <p></p>
+                 <table data-toggle="table" data-striped="true">
+<thead>
+<tr>
+
+
+<th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14. ค่าอลูมิเนียม(จัดซื้อ)</th>
+<th><input disabled type="text" class="form-control" style="width:100px; text-align: right;" id="pur_priceAlu_box" name="pur_priceAlu_box" value="<?php echo $pur_priceAlu; ?>"  placeholder="" > </th>
+<th> &nbsp;&nbsp; ค่าอลูมิเนียม </th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="man_priceAluCalc_box" name="man_priceAluCalc_box" value="<?php echo number_format((extract_int($pur_priceAlu)*$pur_lay3),2); ?>"  placeholder="" > </th>
+
+<th><font color=red>&nbsp;&nbsp;*</font> ค่าอลูมิเนียมจริง</th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="ALU_price_box2" name="ALU_price_box2" value="<?php echo $jobs_real_ALU_price; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<!-- <th> &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" name = "bt_confirm_price_13" id = "bt_confirm_price_13" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Md_confirm_price_13">ยืนยันราคา</button>
+          </th>  -->
+
+</thead>
+     </table>
+         
+         <hr>
     </div>
      <!-- สิ้นสุด tab14 -->
 
@@ -3483,8 +4432,8 @@ var ajax3=createAjax();
     ajax3.onreadystatechange=function(){
         if(ajax3.readyState==4 && ajax3.status==200){
             // document.getElementById('myplace').innerHTML=ajax1.responseText;
-            document.sales_edit.paper_price_box.value=ajax3.responseText;
-            document.sales_edit.paper_price_box2.value=ajax3.responseText;
+            document.sales_edit_tab1.paper_price_box_tab1.value=ajax3.responseText;
+            document.sales_edit_tab1.paper_price_box2_tab1.value=ajax3.responseText;
             // document.sales_edit.real_price.value=ajax2.responseText;
         }else{
             return false;
@@ -3492,7 +4441,7 @@ var ajax3=createAjax();
     }
     ajax3.open("POST","calc_paper.php",true);
     ajax3.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax3.send("pur_offersale="+document.sales_edit.pur_offersale_box.value+"&pur_thick="+document.sales_edit.exa_plastic_thick_box_gram.value+"&paper_length="+document.sales_edit.exa_plastic_length_box.value+"&paper_width="+document.sales_edit.exa_plastic_width_box.value);
+    ajax3.send("pur_offersale="+document.sales_edit_tab1.pur_offersale_box_tab1.value+"&pur_thick="+document.sales_edit_tab1.exa_plastic_thick_box_gram_tab1.value+"&paper_length="+document.sales_edit_tab1.exa_plastic_length_box_tab1.value+"&paper_width="+document.sales_edit_tab1.exa_plastic_width_box_tab1.value);
 
 
 }
