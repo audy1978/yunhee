@@ -3241,7 +3241,7 @@ function chkEvent(e) {
 
                     <div class="col-xs-1">
                          <label>ราคาจัดซื้อ</label>
-                         <input type="text" class="form-control" style="width:100px; text-align: right;" id="pur_offersale_box_tab1" name ="pur_offersale_box_tab1" value="<?php echo $pur_offersale; ?>" placeholder=""  onchange="calc_paper()" >
+                         <input type="text" class="form-control" style="width:100px; text-align: right;" id="pur_offersale_box_tab1" name ="pur_offersale_box_tab1" value="<?php echo $pur_offersale; ?>" placeholder=""  onchange="calc_paper_tab1()" >
                      </div>
 
                       <div class="col-xs-1">
@@ -3321,7 +3321,7 @@ function chkEvent(e) {
                      
                           <div class="col-xs-2">
 
-                   <button type="button" name = "bt_calc1_tab1" id = "bt_calc1_tab1" class="btn btn-primary pull-right" onclick="calc_paper()">คำนวณค่ากระดาษ</button>
+                   <button type="button" name = "bt_calc1_tab1" id = "bt_calc1_tab1" class="btn btn-primary pull-right" onclick="calc_paper_tab1()">คำนวณค่ากระดาษ</button>
                     </div>  
                      
                 </div>
@@ -3342,7 +3342,7 @@ function chkEvent(e) {
    
      
      <p></p>
-
+ <form method="post" id="sales_edit_tab2" name= "sales_edit_tab2" class="form" action= "manager_jobs_edit_tab2.php" >
     <!-- งานพิมพ์จำนวน -->
 
      <div class="row">
@@ -3351,13 +3351,13 @@ function chkEvent(e) {
 <tr>
 <th></th>
 <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. งานพิมพ์  จำนวน</th>
-<th><input type="text" class="form-control" style="width:50px; text-align: right;" id="exa_printAmont_box" name="exa_printAmont_box" value="<?php echo $exa_printAmont; ?>" placeholder="" OnChange="JavaScript:chkNum0(this)" ></th>
+<th><input type="text" class="form-control" style="width:50px; text-align: right;" id="exa_printAmont_box_tab2" name="exa_printAmont_box_tab2" value="<?php echo $exa_printAmont; ?>" placeholder="" OnChange="JavaScript:chkNum0(this)" ></th>
 <th>&nbsp; &nbsp;&nbsp; &nbsp;</th>
 <th>สี&nbsp; &nbsp;</th>
 <th> <input type="text" class="form-control" id="exa_color_box" name="exa_color_box" value="<?php echo $exa_color; ?>" placeholder="">  </th>
 
 <th>&nbsp; &nbsp;&nbsp; &nbsp;</th>
-<th> <button type="button" name = "bt_calc_wage" id = "bt_calc_wage" class="btn btn-primary pull-right" onclick="calc_wage()">คำนวณค่าแรงพิมพ์(WAGE)</button></th>
+
 <?php
    // คำนวน ค่าแรงพิมพ์ต่อ 1 สี
    $cal_wagePrintColor = $print_wage_calc*$man_printer_width*$man_printer_lenght;
@@ -3383,10 +3383,10 @@ function chkEvent(e) {
 ?>
 
 <th>&nbsp; &nbsp;ค่าจริงที่คำนวณได้&nbsp;</th>
-<th> <input type="text" class="form-control" id="man_wagePrint1Color_box" name="man_wagePrint1Color_box" style="width:80px; text-align: right; background: #F9E79F" value="<?php echo $man_wagePrint1Color; ?>">  </th>
+<th> <input type="text" class="form-control" id="man_wagePrint1Color_box_tab2" name="man_wagePrint1Color_box_tab2" style="width:80px; text-align: right; background: #F9E79F" value="<?php echo $man_wagePrint1Color; ?>">  </th>
 
 <th>&nbsp; &nbsp;ค่าแรงพิมพ์ต่อ 1 สี จริง&nbsp;</th>
-<th> <input type="text" class="form-control" id="man_wagePrint1Color_real_box" name="man_wagePrint1Color_real_box" style="width:80px; text-align: right; background: #4FFF7E" value="<?php echo $man_wagePrint1Color_real; ?>" placeholder="" OnChange="JavaScript:chkNum(this)">  </th>
+<th> <input type="text" class="form-control" id="man_wagePrint1Color_real_box_tab2" name="man_wagePrint1Color_real_box_tab2" style="width:80px; text-align: right; background: #4FFF7E" value="<?php echo $man_wagePrint1Color_real; ?>" placeholder="" OnChange="JavaScript:chkNum(this)">  </th>
 
 </thead>
     </table>
@@ -3403,17 +3403,17 @@ function chkEvent(e) {
 <tr>
     <th><font color=red>&nbsp; &nbsp;&nbsp; &nbsp;*</font> ค่าแรงพิมพ์</th>
 
-    <th>&nbsp; &nbsp;&nbsp; &nbsp;<input  id="ch_wage1" name="ch_print_wage" value="3" type="radio" <?php echo $ch_print_wage_value1; ?>>  3.0 </th>
-<th>&nbsp; &nbsp;&nbsp; &nbsp;<input   id="ch_wage2" name="ch_print_wage" value="3.3" type="radio" <?php echo $ch_print_wage_value2; ?>>  3.3</th>
-<th>&nbsp; &nbsp;&nbsp; &nbsp;<input   id="ch_wage3"name="ch_print_wage" value="3.6" type="radio" <?php echo $ch_print_wage_value3; ?>>  3.6</th>
+    <th>&nbsp; &nbsp;&nbsp; &nbsp;<input  id="ch_wage1_tab2" name="ch_print_wage" value="3" type="radio" <?php echo $ch_print_wage_value1; ?>>  3.0 </th>
+<th>&nbsp; &nbsp;&nbsp; &nbsp;<input   id="ch_wage2_tab2" name="ch_print_wage" value="3.3" type="radio" <?php echo $ch_print_wage_value2; ?>>  3.3</th>
+<th>&nbsp; &nbsp;&nbsp; &nbsp;<input   id="ch_wage3_tab2"name="ch_print_wage" value="3.6" type="radio" <?php echo $ch_print_wage_value3; ?>>  3.6</th>
 
-<th>&nbsp; &nbsp;&nbsp; &nbsp;<input   id="ch_wage4" name="ch_print_wage" value="4" type="radio" <?php echo $ch_print_wage_value4; ?>>  อื่น ๆ</th>
-<th><input type="text" class="form-control" style="width:60px;" id="print_wage" name="print_wage" placeholder="" maxlength="3" value="<?php echo $wage_print_value; ?>" onkeypress="return isNumberKey(event)" disabled></th>
+<th>&nbsp; &nbsp;&nbsp; &nbsp;<input   id="ch_wage4_tab2" name="ch_print_wage" value="4" type="radio" <?php echo $ch_print_wage_value4; ?>>  อื่น ๆ</th>
+<th><input type="text" class="form-control" style="width:60px;" id="print_wage_tab2" name="print_wage_tab2" placeholder="" maxlength="3" value="<?php echo $wage_print_value; ?>" onkeypress="return isNumberKey(event)" disabled></th>
 
 <th>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;ค่าแรงพิมพ์&nbsp; &nbsp;</th>
-<th><input type="text" class="form-control"   style="width:150px; text-align: right; background: #F9E79F" id="wage_print_box" name="wage_print_box" value="<?php echo $wage_print_calc; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control"   style="width:150px; text-align: right; background: #F9E79F" id="wage_print_box_tab2" name="wage_print_box_tab2" value="<?php echo $wage_print_calc; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
 <th><font color=red>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*</font> ค่าแรงพิมพ์จริง&nbsp; &nbsp;</th>
-<th><input type="text" class="form-control" style="width:150px; text-align: right; background: #4FFF7E" id="wage_print_box2" name="wage_print_box2" placeholder="" value="<?php echo $jobs_real_wage_save; ?>" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:150px; text-align: right; background: #4FFF7E" id="wage_print_box2_tab2" name="wage_print_box2_tab2" placeholder="" value="<?php echo $jobs_real_wage_save; ?>" OnChange="JavaScript:chkNum(this)"></th>
 <th>&nbsp; &nbsp;&nbsp;</th>
 <!-- <th><button type="button" name = "bt_calc1" id = "bt_calc1" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Md_confirm_price_wage">ยืนยันราคา</button></th>  -->
 </tr>
@@ -3453,6 +3453,8 @@ function chkEvent(e) {
 <th>&nbsp; &nbsp;&nbsp; &nbsp;[ <?php echo $pur_checkP; ?> ]</th>
 
 </tr>
+<th> &nbsp; &nbsp;&nbsp; &nbsp;<button type="button" name = "bt_calc_wage_tab2" id = "bt_calc_wage_tab2" class="btn btn-primary pull-right" onclick="calc_wage_tab2()">คำนวณค่าแรงพิมพ์(WAGE)</button></th>
+
 </thead>
      </table>
 
@@ -3460,7 +3462,8 @@ function chkEvent(e) {
     <!-- จบ พลาสติก กว้าง -->
     <hr>
      
-     
+    </form>
+    
  </div>
   <!-- สิ้นสุด tab2 -->
 
@@ -3468,6 +3471,8 @@ function chkEvent(e) {
   <div id="tab3" class="tab-pane fade">
       
       <p></p>
+      
+      <form method="post" id="sales_edit_tab3" name= "sales_edit_tab3" class="form" action= "manager_jobs_edit_tab3.php" >
    
         <div class="row">
      <div class="col-md-12">
@@ -3485,9 +3490,9 @@ function chkEvent(e) {
 
 
 <th>&nbsp;&nbsp;ราคาเคลือบผิวหน้า</th>
-<th><input type="text" class="form-control"  style="width:100px; text-align: right; background: #F9E79F" id="price_front1" name="price_front1" value="<?php echo $price_front1_calc; ?>" placeholder="" ></th>
+<th><input type="text" class="form-control"  style="width:100px; text-align: right; background: #F9E79F" id="price_front1_tab3" name="price_front1_tab3" value="<?php echo $price_front1_calc; ?>" placeholder="" ></th>
 <th><font color=red>&nbsp;&nbsp;*</font> ค่าเคลือบผิวจริง</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_front1R" name="price_front1R" placeholder="" value="<?php echo $jobs_real_Pfront1R_save; ?>" OnChange="JavaScript:chkNum3(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_front1R_tab3" name="price_front1R_tab3" placeholder="" value="<?php echo $jobs_real_Pfront1R_save; ?>" OnChange="JavaScript:chkNum3(this)"></th>
 
 </tr>
 </thead>
@@ -3514,9 +3519,9 @@ function chkEvent(e) {
 
 
 <th>&nbsp;&nbsp;ราคาเคลือบผิวหน้า</th>
-<th><input type="text" class="form-control"  style="width:100px; text-align: right; background: #F9E79F" id="price_front2" name= "price_front2" value="<?php echo $price_front2_calc; ?>" placeholder="" ></th>
+<th><input type="text" class="form-control"  style="width:100px; text-align: right; background: #F9E79F" id="price_front2_tab3" name= "price_front2_tab3" value="<?php echo $price_front2_calc; ?>" placeholder="" ></th>
 <th><font color=red>&nbsp;&nbsp;*</font> ค่าเคลือบผิวจริง</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_front2R" name= "price_front2R" value="<?php echo $jobs_real_Pfront2R_save; ?>" placeholder="" OnChange="JavaScript:chkNum3(this)" ></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_front2R_tab3" name= "price_front2R_tab3" value="<?php echo $jobs_real_Pfront2R_save; ?>" placeholder="" OnChange="JavaScript:chkNum3(this)" ></th>
 
 </tr>
 </thead>
@@ -3543,9 +3548,9 @@ function chkEvent(e) {
 
 
 <th>&nbsp;&nbsp;ราคาเคลือบผิวหน้า</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="price_front3" name="price_front3" placeholder="" value="<?php echo $price_front3_calc; ?>" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="price_front3_tab3" name="price_front3_tab3" placeholder="" value="<?php echo $price_front3_calc; ?>" OnChange="JavaScript:chkNum(this)"></th>
 <th><font color=red>&nbsp;&nbsp;*</font> ค่าเคลือบผิวจริง</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_front3R" name="price_front3R" placeholder="" value="<?php echo $jobs_real_Pfront3R_save; ?>" OnChange="JavaScript:chkNum3(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_front3R_tab3" name="price_front3R_tab3" placeholder="" value="<?php echo $jobs_real_Pfront3R_save; ?>" OnChange="JavaScript:chkNum3(this)"></th>
 
 </tr>
 </thead>
@@ -3572,9 +3577,9 @@ function chkEvent(e) {
 
 
 <th>&nbsp;&nbsp;ราคาเคลือบผิวหน้า</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="price_front4" name="price_front4" placeholder="" value="<?php echo $price_front4_calc; ?>" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="price_front4_tab3" name="price_front4_tab3" placeholder="" value="<?php echo $price_front4_calc; ?>" OnChange="JavaScript:chkNum(this)"></th>
 <th><font color=red>&nbsp;&nbsp;*</font> ค่าเคลือบผิวจริง</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_front4R" name="price_front4R" placeholder="" value="<?php echo $jobs_real_Pfront4R_save; ?>" OnChange="JavaScript:chkNum3(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_front4R_tab3" name="price_front4R_tab3" placeholder="" value="<?php echo $jobs_real_Pfront4R_save; ?>" OnChange="JavaScript:chkNum3(this)"></th>
 
 <!-- <th> &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" name = "bt_confirm_price_front" id = "bt_confirm_price_front" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Md_confirm_price_front">ยืนยันราคา</button>
           </th>  -->
@@ -3593,7 +3598,7 @@ function chkEvent(e) {
 
     <div class="row">
         <div class="col-md-12">
-      &nbsp;&nbsp;  <button type="button" name = "bt_calc_front" id = "bt_calc_front" class="btn btn-primary"  >คำนวณค่าเคลือบผิวหน้า</button>
+      &nbsp;&nbsp;  <button type="button" name = "bt_calc_front_tab3" id = "bt_calc_front_tab3" class="btn btn-primary"  >คำนวณค่าเคลือบผิวหน้า</button>
         </div>
     </div>
 
@@ -3601,6 +3606,9 @@ function chkEvent(e) {
 
 
        <hr>
+       
+       
+      </form>
       
   </div>
    <!-- สิ้นสุด tab3 -->
@@ -3608,14 +3616,15 @@ function chkEvent(e) {
    <div id="tab4" class="tab-pane fade">
        
        <p></p>
-     
-        <div class="row">
+       <form method="post" id="sales_edit_tab4" name= "sales_edit_tab4" class="form" action= "manager_jobs_edit_tab4.php" >
+   
+           <div class="row">
 
      <table data-toggle="table" data-striped="true">
 <thead>
 <tr>
     <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. ลูกฟูก</th>
-<th><input type="text" class="form-control" style="width:60px; text-align: right;" id="factor_lf_box" name="factor_lf_box" value="<?php echo $man_factor_lf; ?>" placeholder="" ></th>
+<th><input type="text" class="form-control" style="width:60px; text-align: right;" id="factor_lf_box_tab4" name="factor_lf_box_tab4" value="<?php echo $man_factor_lf; ?>" placeholder="" ></th>
 <th>&nbsp; ราคาต่อตารางฟุต</th>
 <th> &nbsp;&nbsp;กว้าง</th>
 <th><input disabled type="text" class="form-control" style="width:70px; text-align: right;" id="lf_width_box" name="lf_width_box" value="<?php echo $exa_4LF_width; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
@@ -3630,10 +3639,10 @@ function chkEvent(e) {
 <th><input type="text" class="form-control" style="width:220px; text-align: right; background: #F9E79F" id="man_TypeLF_box" name="man_TypeLF_box" value="<?php echo $sales_4LF_type; ?>" placeholder="" ></th>
 
 <th>&nbsp; &nbsp;&nbsp;ค่าลูกฟูก</th>
-<th><input type="text" class="form-control" style="width:70px; text-align: right; background: #F9E79F" id="lf_price_box" name="lf_price_box" value="<?php echo $lf_price_calc; ?>" placeholder="" ></th>
+<th><input type="text" class="form-control" style="width:70px; text-align: right; background: #F9E79F" id="lf_price_box_tab4" name="lf_price_box_tab4" value="<?php echo $lf_price_calc; ?>" placeholder="" ></th>
 
 <th><font color=red>&nbsp; &nbsp;&nbsp;*</font> ค่าลูกฟูกจริง</th>
-<th><input type="text" class="form-control" style="width:70px; text-align: right; background: #4FFF7E" id="lf_price_box2" name="lf_price_box2" placeholder="" value="<?php echo $jobs_real_lf_price; ?>" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:70px; text-align: right; background: #4FFF7E" id="lf_price_box2_tab4" name="lf_price_box2_tab4" placeholder="" value="<?php echo $jobs_real_lf_price; ?>" OnChange="JavaScript:chkNum(this)"></th>
 
 </tr>
 </thead>
@@ -3654,16 +3663,16 @@ function chkEvent(e) {
 <thead>
 <tr>
     <th>  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;LAMINATE</th>
-<th>&nbsp;&nbsp;<input id ="check_lami_factor1" name ="check_lami_factor" type="radio" value="0.15" <?php echo $ch_lami_factor_value1; ?>>  0.15 </th>
-<th>&nbsp;&nbsp;<input id ="check_lami_factor2" name ="check_lami_factor" type="radio" value="0.18" <?php echo $ch_lami_factor_value2; ?>>  0.18</th>
-<th>&nbsp;&nbsp;<input id ="check_lami_factor3" name ="check_lami_factor" type="radio" value="0.20" <?php echo $ch_lami_factor_value3; ?>>  0.20</th>
-<th>&nbsp;&nbsp;<input id ="check_lami_factor4" name ="check_lami_factor" type="radio" value="4" <?php echo $ch_lami_factor_value4; ?>>  อื่น ๆ</th>
-<th><input disabled type="text" class="form-control" style="width:60px;" id="factor_lami_box" name="factor_lami_box" value="<?php echo $factor_lami_box_value; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th>&nbsp;&nbsp;<input id ="check_lami_factor1_tab4" name ="check_lami_factor" type="radio" value="0.15" <?php echo $ch_lami_factor_value1; ?>>  0.15 </th>
+<th>&nbsp;&nbsp;<input id ="check_lami_factor2_tab4" name ="check_lami_factor" type="radio" value="0.18" <?php echo $ch_lami_factor_value2; ?>>  0.18</th>
+<th>&nbsp;&nbsp;<input id ="check_lami_factor3_tab4" name ="check_lami_factor" type="radio" value="0.20" <?php echo $ch_lami_factor_value3; ?>>  0.20</th>
+<th>&nbsp;&nbsp;<input id ="check_lami_factor4_tab4" name ="check_lami_factor" type="radio" value="4" <?php echo $ch_lami_factor_value4; ?>>  อื่น ๆ</th>
+<th><input disabled type="text" class="form-control" style="width:60px;" id="factor_lami_box_tab4" name="factor_lami_box" value="<?php echo $factor_lami_box_value; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
 
  <th>  &nbsp; &nbsp;&nbsp;ค่า LAMINATE</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="lami_price_box" name="lami_price_box" value="<?php echo $lami_price_calc; ?>" placeholder="" > </th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="lami_price_box_tab4" name="lami_price_box_tab4" value="<?php echo $lami_price_calc; ?>" placeholder="" > </th>
 <th><font color=red>&nbsp;&nbsp;*</font> ค่า LAMINATE จริง</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="lami_price_box2" name="lami_price_box2" value="<?php echo $jobs_real_lami_price; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="lami_price_box2_tab4" name="lami_price_box2_tab4" value="<?php echo $jobs_real_lami_price; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
 <!-- <th> &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" name = "bt_confirm_price_4" id = "bt_confirm_price_4" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Md_confirm_price_4">ยืนยันราคา</button>
           </th>  -->
 </tr>
@@ -3675,7 +3684,7 @@ function chkEvent(e) {
     <p>
 
          <div class="row">
-          &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;     <button type="button" name = "bt_calc_lf" id = "bt_calc_lf" class="btn btn-primary"  >คำนวณราคาลูกฟูก</button>
+          &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;     <button type="button" name = "bt_calc_lf_tab4" id = "bt_calc_lf_tab4" class="btn btn-primary"  >คำนวณราคาลูกฟูก</button>
         </div>
 
     <div class="row">
@@ -3685,23 +3694,23 @@ function chkEvent(e) {
 <tr>
 
  <th>  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;B ลูกฟูก</th>
-<th>&nbsp;&nbsp;<input id ="check_Blf_factor1" name ="check_Blf_factor" type="radio" value="1" <?php echo $check_Blf_factor1; ?>>  1 </th>
-<th>&nbsp;&nbsp;<input id ="check_Blf_factor2" name ="check_Blf_factor" type="radio" value="2" <?php echo $check_Blf_factor2; ?>>  2</th>
-<th>&nbsp;&nbsp;<input id ="check_Blf_factor3" name ="check_Blf_factor" type="radio" value="3" <?php echo $check_Blf_factor3; ?>>  3</th>
+<th>&nbsp;&nbsp;<input id ="check_Blf_factor1_tab4" name ="check_Blf_factor" type="radio" value="1" <?php echo $check_Blf_factor1; ?>>  1 </th>
+<th>&nbsp;&nbsp;<input id ="check_Blf_factor2_tab4" name ="check_Blf_factor" type="radio" value="2" <?php echo $check_Blf_factor2; ?>>  2</th>
+<th>&nbsp;&nbsp;<input id ="check_Blf_factor3_tab4" name ="check_Blf_factor" type="radio" value="3" <?php echo $check_Blf_factor3; ?>>  3</th>
 
  <th>&nbsp; &nbsp;&nbsp;ราคา</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right;" id="exa_Bluk_box" name="exa_Bluk_box" value="<?php echo $pur_Bluk; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right;" id="exa_Bluk_box_tab4" name="exa_Bluk_box_tab4" value="<?php echo $pur_Bluk; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
 <th>&nbsp; บาท/กล่อง</th>
 <th>&nbsp; &nbsp;&nbsp;</th>
 <th>&nbsp; &nbsp;&nbsp;บรรจุลังละ</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right;" id="exa_bluk_pack_box" name="exa_bluk_pack_box" value="<?php echo $exa_bluk_pack; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right;" id="exa_bluk_pack_box_tab4" name="exa_bluk_pack_box_tab4" value="<?php echo $exa_bluk_pack; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
 <th>&nbsp;กล่อง</th>
 
 <th>&nbsp;&nbsp;ค่า B ลูกฟูก</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="Blf_price_box" name="Blf_price_box" value="<?php echo $Blf_price_calc; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="Blf_price_box_tab4" name="Blf_price_box_tab4" value="<?php echo $Blf_price_calc; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
 
 <th><font color=red>&nbsp;&nbsp;*</font> ค่า B ลูกฟูกจริง</th>
-<th><input type="text" class="form-control" style="width:150px; text-align: right; background: #4FFF7E" id="Blf_price_box2" name="Blf_price_box2" value="<?php echo $jobs_real_Blf_price; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:150px; text-align: right; background: #4FFF7E" id="Blf_price_box2_tab4" name="Blf_price_box2_tab4" value="<?php echo $jobs_real_Blf_price; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
 
 
 </tr>
@@ -3714,11 +3723,12 @@ function chkEvent(e) {
     <p>
 
     <div class="row">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <button type="button" name = "bt_calc_B_lf" id = "bt_calc_B_lf" class="btn btn-primary"  >คำนวณราคา B ลูกฟูก</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <button type="button" name = "bt_calc_B_lf_tab4" id = "bt_calc_B_lf_tab4" class="btn btn-primary"  >คำนวณราคา B ลูกฟูก</button>
     </div>
 
 
     <hr>
+       </form>
        
    </div>
     <!-- สิ้นสุด tab4 -->
@@ -3728,6 +3738,8 @@ function chkEvent(e) {
         
         <p></p>
       
+       <form method="post" id="sales_edit_tab5" name= "sales_edit_tab5" class="form" action= "manager_jobs_edit_tab5.php" > 
+        
          <div class = "row">
    <div class="col-md-12">
 
@@ -3912,7 +3924,7 @@ function chkEvent(e) {
 
 
 
- 
+       </form>
 
     <hr>
 
@@ -4426,6 +4438,38 @@ var ajax2=createAjax();
 
 <script language="javascript">
 function calc_paper(mydata){
+    
+
+var ajax3=createAjax(); 
+    ajax3.onreadystatechange=function(){
+        if(ajax3.readyState==4 && ajax3.status==200){
+            // document.getElementById('myplace').innerHTML=ajax1.responseText;
+            document.sales_edit.paper_price_box.value=ajax3.responseText;
+            document.sales_edit.paper_price_box2.value=ajax3.responseText;
+            // document.sales_edit.real_price.value=ajax2.responseText;
+        }else{
+            return false;
+        }
+    }
+    ajax3.open("POST","calc_paper.php",true);
+    ajax3.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
+    ajax3.send("pur_offersale="+document.sales_edit.pur_offersale_box.value+"&pur_thick="+document.sales_edit.exa_plastic_thick_box_gram.value+"&paper_length="+document.sales_edit.exa_plastic_length_box.value+"&paper_width="+document.sales_edit.exa_plastic_width_box.value);
+
+
+}
+
+
+
+
+</script>
+
+
+<!--   สิ้นสุดการคำนวน ค่า กระดาษ  -->
+
+<!--  คำนวนค่ากระดาษ  -->
+
+<script language="javascript">
+function calc_paper_tab1(mydata){
 
 
 var ajax3=createAjax();
@@ -4458,14 +4502,66 @@ var ajax3=createAjax();
 
 <script language="javascript">
 function calc_wage(mydata){
+    
+
+var ajax3=createAjax(); 
+    ajax3.onreadystatechange=function(){
+        if(ajax3.readyState==4 && ajax3.status==200){
+            // document.getElementById('myplace').innerHTML=ajax1.responseText;
+            document.sales_edit.wage_print_box.value=ajax3.responseText;
+            document.sales_edit.wage_print_box2.value=ajax3.responseText;
+            
+            // document.sales_edit.real_price.value=ajax2.responseText;
+        }else{
+            return false;
+        }
+        
+    
+    }
+    
+   //var ch_wage2 =document.getElementById('ch_print_wage').value;
+   
+   var ch_wage11 =document.getElementById('ch_wage1');
+   var ch_wage22 =document.getElementById('ch_wage2');
+   var ch_wage33 =document.getElementById('ch_wage3');
+   var ch_wage44 =document.getElementById('print_wage');
+   
+   if (ch_wage11.checked) {
+ch_wage = ch_wage11.value;
+} else if (ch_wage22.checked) {
+ch_wage = ch_wage22.value;
+} else if (ch_wage33.checked) {
+ch_wage = ch_wage33.value;
+} else {
+ch_wage = ch_wage44.value;
+} 
+          
+    ajax3.open("POST","calc_wage.php",true);
+    ajax3.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
+    //var ch_wage_status = $
+    ajax3.send("print_wage="+document.sales_edit.print_wage.value+"&number_color="+document.sales_edit.exa_printAmont_box.value+"&paper_length="+document.sales_edit.exa_plastic_length_box.value+"&paper_width="+document.sales_edit.exa_plastic_width_box.value+"&ch_print_wage2="+ch_wage);
+    
+
+}
+
+
+
+
+</script>
+
+
+<!--  คำนวนค่าแรงพิมพ์ wage  -->
+
+<script language="javascript">
+function calc_wage_tab2(mydata){
 
 
 var ajax3=createAjax();
     ajax3.onreadystatechange=function(){
         if(ajax3.readyState==4 && ajax3.status==200){
             // document.getElementById('myplace').innerHTML=ajax1.responseText;
-            document.sales_edit.wage_print_box.value=ajax3.responseText;
-            document.sales_edit.wage_print_box2.value=ajax3.responseText;
+            document.sales_edit_tab2.wage_print_box_tab2.value=ajax3.responseText;
+            document.sales_edit_tab2.wage_print_box2_tab2.value=ajax3.responseText;
 
             // document.sales_edit.real_price.value=ajax2.responseText;
         }else{
@@ -4477,10 +4573,10 @@ var ajax3=createAjax();
 
    //var ch_wage2 =document.getElementById('ch_print_wage').value;
 
-   var ch_wage11 =document.getElementById('ch_wage1');
-   var ch_wage22 =document.getElementById('ch_wage2');
-   var ch_wage33 =document.getElementById('ch_wage3');
-   var ch_wage44 =document.getElementById('print_wage');
+   var ch_wage11 =document.getElementById('ch_wage1_tab2');
+   var ch_wage22 =document.getElementById('ch_wage2_tab2');
+   var ch_wage33 =document.getElementById('ch_wage3_tab2');
+   var ch_wage44 =document.getElementById('print_wage_tab2');
 
    if (ch_wage11.checked) {
 ch_wage = ch_wage11.value;
@@ -4495,7 +4591,7 @@ ch_wage = ch_wage44.value;
     ajax3.open("POST","calc_wage.php",true);
     ajax3.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     //var ch_wage_status = $
-    ajax3.send("print_wage1Color="+document.sales_edit.man_wagePrint1Color_box.value+"&number_color="+document.sales_edit.exa_printAmont_box.value+"&paper_length="+document.sales_edit.exa_plastic_length_box.value+"&paper_width="+document.sales_edit.exa_plastic_width_box.value+"&ch_print_wage2="+ch_wage);
+    ajax3.send("print_wage1Color="+document.sales_edit_tab2.man_wagePrint1Color_box_tab2.value+"&number_color="+document.sales_edit_tab2.exa_printAmont_box_tab2.value+"&paper_length="+document.sales_edit_tab1.exa_plastic_length_box_tab1.value+"&paper_width="+document.sales_edit_tab1.exa_plastic_width_box_tab1.value+"&ch_print_wage2="+ch_wage);
 
 
 }
@@ -4814,6 +4910,33 @@ var ajax4=createAjax();
 
 
      </script>
+     
+     
+      <script>
+
+                        document.getElementById('ch_wage4_tab2').onchange= function() {
+                        document.getElementById('print_wage_tab2').disabled = !this.checked;
+
+                                                    };
+
+                         document.getElementById('ch_wage1_tab2').onchange= function() {
+                        document.getElementById('print_wage_tab2').disabled = this.checked;
+                        document.getElementById('print_wage_tab2').value="";
+                                                    };
+                        document.getElementById('ch_wage2_tab2').onchange= function() {
+                        document.getElementById('print_wage_tab2').disabled = this.checked;
+                        document.getElementById('print_wage_tab2').value="";
+                                                    };
+                        document.getElementById('ch_wage3_tab2').onchange= function() {
+                        document.getElementById('print_wage_tab2').disabled = this.checked;
+                        document.getElementById('print_wage_tab2').value="";
+                                                    };
+
+
+     </script>
+     
+     
+     
 
 
      <!--  Factor LAMINATE checkbox radio -->
@@ -4845,6 +4968,37 @@ var ajax4=createAjax();
      </script>
 
      <!--  Factor  Factor ฟอยล์	 checkbox radio -->
+     
+      <!--  Factor LAMINATE checkbox radio  tab4-->
+      <script>
+
+                        document.getElementById('check_lami_factor4_tab4').onchange= function() {
+                        document.getElementById('factor_lami_box_tab4').disabled = !this.checked;
+
+                                                    };
+
+                         document.getElementById('check_lami_factor1_tab4').onchange= function() {
+                        document.getElementById('factor_lami_box_tab4').disabled = this.checked;
+                        document.getElementById('factor_lami_box_tab4').value="";
+                                                    };
+                        document.getElementById('check_lami_factor2_tab4').onchange= function() {
+                        document.getElementById('factor_lami_box_tab4').disabled = this.checked;
+                        document.getElementById('factor_lami_box_tab4').value="";
+                                                    };
+                        document.getElementById('check_lami_factor3_tab4').onchange= function() {
+                        document.getElementById('factor_lami_box_tab4').disabled = this.checked;
+                        document.getElementById('factor_lami_box_tab4').value="";
+                                                    };
+
+
+
+
+
+
+     </script>
+
+     <!--  Factor  LAMINATE  tab4 -->
+     
 
      <!--  คำนวณ บล็อคปั้มนูนรวม -->
 
@@ -6934,8 +7088,232 @@ function addCommas(nStr){
 
                             </script>
 
+<!--    tab 3 calc script -->
+          <script>
+
+                        document.getElementById('bt_calc_front_tab3').onclick= function() {
+
+                           var ch_wage11 =document.getElementById('ch_wage1');
+                           var ch_wage22 =document.getElementById('ch_wage2');
+                           var ch_wage33 =document.getElementById('ch_wage3');
+                           var ch_wage44 =document.getElementById('print_wage');
+
+                           var value_Z =document.getElementById('lay_3');
+
+                           var type1 =document.getElementById('exa_3front1_type_box');
 
 
+                           var type2 =document.getElementById('exa_3front2_type_box');
+
+
+                            var type3 =document.getElementById('exa_3front3_type_box');
+
+
+                           var type4 =document.getElementById('exa_3front4_type_box');
+
+
+                           var exa_plastic_width =document.getElementById('exa_plastic_width_box');
+                           var exa_plastic_length =document.getElementById('exa_plastic_length_box');
+
+                           // ค่า กว้าง x ยาว ของ size เคลือบผิว
+
+                           var exa_3front1_width =document.getElementById('exa_3front1_width_box');
+                           var exa_3front1_lenght =document.getElementById('exa_3front1_lenght_box');
+                           var exa_3front2_width =document.getElementById('exa_3front2_width_box');
+                           var exa_3front2_lenght =document.getElementById('exa_3front2_lenght_box');
+                           var exa_3front3_width =document.getElementById('exa_3front3_width_box');
+                           var exa_3front3_lenght =document.getElementById('exa_3front3_lenght_box');
+                           var exa_3front4_width =document.getElementById('exa_3front4_width_box');
+                           var exa_3front4_lenght =document.getElementById('exa_3front4_lenght_box');
+
+                           // ขนาดเข้าเครื่องพิมพ์ กว้าง  ยาว
+                           var man_printer_width =document.getElementById('man_printer_width_box');
+                           var man_printer_lenght =document.getElementById('man_printer_lenght_box');
+
+
+
+                           if (ch_wage11.checked) {
+                                ch_wage = ch_wage11.value;
+                                } else if (ch_wage22.checked) {
+                                ch_wage = ch_wage22.value;
+                                } else if (ch_wage33.checked) {
+                                ch_wage = ch_wage33.value;
+                                } else {
+                                ch_wage = ch_wage44.value;
+                                }
+
+
+                                  if (type1.value=="อื่น ๆ" || type1.value=="SPOT UV" || type1.value=="-"){
+
+                                    result_type1 = exa_3front1_width.value*exa_3front1_lenght.value;
+                                    result_type1 = result_type1 + (result_type1*0.05);
+
+                                    } else if(type1.value=="อาบเงา")  {
+                                      result_type1 = man_printer_width.value*man_printer_lenght.value*ch_wage;
+                                      result_type1 = result_type1 + (result_type1*0.05);
+
+                                    } else if(type1.value=="อาบด้าน")  {
+                                      result_type1 = man_printer_width.value*man_printer_lenght.value*ch_wage;
+                                       result_type1 = result_type1 + (result_type1*0.05);
+
+                                    }else if(type1.value=='ขัดเงา เว้นลิ้น'){
+                                    result_type1 = ((man_printer_width.value*man_printer_lenght.value*0.0013)/value_Z.value);
+                                    result_type1 = result_type1 + (result_type1*0.05);
+
+                                   }else if(type1.value=='UV เว้นลิ้น'){
+                                    result_type1 = ((man_printer_width.value*man_printer_lenght.value*0.0012)/value_Z.value);
+                                    result_type1 = result_type1 + (result_type1*0.05);
+
+                                   }else if(type1.value=='OPP เงา'){
+                                    result_type1 = ((man_printer_width.value*man_printer_lenght.value*0.0030)/value_Z.value);
+                                    result_type1 = result_type1 + (result_type1*0.05);
+
+                                   }else if(type1.value=='OOP ด้าน'){
+                                    result_type1 = ((man_printer_width.value*man_printer_lenght.value*0.0040)/value_Z.value);
+                                    result_type1 = result_type1 + (result_type1*0.05);
+                                      }
+
+
+
+                                 if (type2.value=="อื่น ๆ" || type2.value=="SPOT UV" || type2.value=="-"){
+
+                                    result_type2 = exa_3front2_width.value*exa_3front2_lenght.value;
+                                   result_type2 = result_type2 + (result_type2*0.05);
+
+
+                                  } else if(type2.value=="อาบเงา")  {
+                                      result_type2 = man_printer_width.value*man_printer_lenght.value*ch_wage;
+                                       result_type2 = result_type2 + (result_type2*0.05);
+
+                                   } else if(type2.value=="อาบด้าน")  {
+                                      result_type2 = man_printer_width.value*man_printer_lenght.value*ch_wage;
+                                       result_type2 = result_type2 + (result_type2*0.05);
+
+                                    }else if(type2.value=='ขัดเงา เว้นลิ้น'){
+                                    result_type2 = ((man_printer_width.value*man_printer_lenght.value*0.0013)/value_Z.value);
+                                   result_type2 = result_type2 + (result_type2*0.05);
+
+                                   }else if(type2.value=='UV เว้นลิ้น'){
+                                    result_type2 = ((man_printer_width.value*man_printer_lenght.value*0.0012)/value_Z.value);
+                                   result_type2 = result_type2 + (result_type2*0.05);
+
+                                   }else if(type2.value=='OPP เงา'){
+                                    result_type2 = ((man_printer_width.value*man_printer_lenght.value*0.0030)/value_Z.value);
+                                   result_type2 = result_type2 + (result_type2*0.05);
+
+                                   }else if(type2.value=='OOP ด้าน'){
+                                    result_type2 = ((man_printer_width.value*man_printer_lenght.value*0.0040)/value_Z.value);
+                                   result_type2 = result_type2 + (result_type2*0.05);
+                                      }
+
+
+
+                                     if (type3.value=="อื่น ๆ" || type3.value=="SPOT UV" || type3.value=="-"){
+
+                                    result_type3 = exa_3front3_width.value*exa_3front3_lenght.value;
+                                    result_type3 = result_type3 + (result_type3*0.05);
+
+
+                                  } else if(type3.value=="อาบเงา")  {
+                                       result_type3 = man_printer_width.value*man_printer_lenght.value*ch_wage;
+                                       result_type3 = result_type3 + (result_type3*0.05);
+
+                                   } else if(type3.value=="อาบด้าน")  {
+                                      result_type3 = man_printer_width.value*man_printer_lenght.value*ch_wage;
+                                       result_type3 = result_type3 + (result_type3*0.05);
+
+                                    }else if(type3.value=='ขัดเงา เว้นลิ้น'){
+                                    result_type3 = ((man_printer_width.value*man_printer_lenght.value*0.0013)/value_Z.value);
+                                   result_type3 = result_type3 + (result_type3*0.05);
+
+                                   }else if(type3.value=='UV เว้นลิ้น'){
+                                    result_type3 = ((man_printer_width.value*man_printer_lenght.value*0.0012)/value_Z.value);
+                                   result_type3 = result_type3 + (result_type3*0.05);
+
+                                   }else if(type3.value=='OPP เงา'){
+                                    result_type3 = ((man_printer_width.value*man_printer_lenght.value*0.0030)/value_Z.value);
+                                   result_type3 = result_type3 + (result_type3*0.05);
+
+                                   }else if(type3.value=='OOP ด้าน'){
+                                    result_type3 = ((man_printer_width.value*man_printer_lenght.value*0.0040)/value_Z.value);
+                                   result_type3 = result_type3 + (result_type3*0.05);
+                                      }
+
+
+
+                           if (type4.value=="อื่น ๆ" || type4.value=="SPOT UV" || type4.value=="-"){
+
+                                    result_type4 = exa_3front4_width.value*exa_3front4_lenght.value;
+                                    result_type4 = result_type4 + (result_type4*0.05);
+
+
+                                  } else if(type4.value=="อาบเงา")  {
+                                      result_type4 = man_printer_width.value*man_printer_lenght.value*ch_wage;
+                                       result_type4 = result_type4 + (result_type4*0.05);
+
+                                   } else if(type4.value=="อาบด้าน")  {
+                                       result_type4 = man_printer_width.value*man_printer_lenght.value*ch_wage;
+                                       result_type4 = result_type4 + (result_type4*0.05);
+
+                                    }else if(type4.value=='ขัดเงา เว้นลิ้น'){
+                                    result_type4 = ((man_printer_width.value*man_printer_lenght.value*0.0013)/value_Z.value);
+                                   result_type4 = result_type4 + (result_type4*0.05);
+
+                                   }else if(type4.value=='UV เว้นลิ้น'){
+                                    result_type4 = ((man_printer_width.value*man_printer_lenght.value*0.0012)/value_Z.value);
+                                   result_type4 = result_type4 + (result_type4*0.05);
+
+                                   }else if(type4.value=='OPP เงา'){
+                                    result_type4 = ((man_printer_width.value*man_printer_lenght.value*0.0030)/value_Z.value);
+                                   result_type4 = result_type4 + (result_type4*0.05);
+
+                                   }else if(type4.value=='OOP ด้าน'){
+                                    result_type4 = ((man_printer_width.value*man_printer_lenght.value*0.0040)/value_Z.value);
+                                   result_type4 = result_type4 + (result_type4*0.05);
+                                      }
+
+
+
+                         result_type1 =  result_type1.toFixed(3);
+                         result_type1 =  addCommas(result_type1);
+
+                         result_type2 =  result_type2.toFixed(3);
+                         result_type2 =  addCommas(result_type2);
+
+                         result_type3 =  result_type3.toFixed(3);
+                         result_type3 =  addCommas(result_type3);
+
+                         result_type4 =  result_type4.toFixed(3);
+                         result_type4 =  addCommas(result_type4);
+
+
+                       document.getElementById('price_front1_tab3').value = result_type1;
+                       document.getElementById('price_front1R_tab3').value = result_type1;
+
+                       document.getElementById('price_front2_tab3').value = result_type2;
+                       document.getElementById('price_front2R_tab3').value = result_type2;
+
+                       document.getElementById('price_front3_tab3').value = result_type3;
+                       document.getElementById('price_front3R_tab3').value = result_type3;
+
+                       document.getElementById('price_front4_tab3').value = result_type4;
+                       document.getElementById('price_front4R_tab3').value = result_type4;
+
+
+
+
+        };
+
+
+
+                            </script>
+
+        
+        <!--    end calc script tab 3  -->
+
+        
+        
+        
                             <script>
 
                         document.getElementById('bt_calc_lf').onclick= function() {
@@ -6991,6 +7369,65 @@ function addCommas(nStr){
 
 
                             </script>
+                   
+                   <!--    คำนวนราคา ลูกฟูก tab 4 -->
+                        <script>
+
+                        document.getElementById('bt_calc_lf_tab4').onclick= function() {
+
+                           var lami_factor1 =document.getElementById('check_lami_factor1_tab4');
+                           var lami_factor2 =document.getElementById('check_lami_factor2_tab4');
+                           var lami_factor3 =document.getElementById('check_lami_factor3_tab4');
+                           var lami_factor4 =document.getElementById('factor_lami_box_tab4');
+
+                           var value_Z =document.getElementById('lay_3');
+
+                           var factor_lf =document.getElementById('factor_lf_box_tab4');
+                           var lf_width =document.getElementById('lf_width_box');
+                           var lf_length =document.getElementById('lf_length_box');
+
+                           var man_printer_width =document.getElementById('man_printer_width_box');
+                           var man_printer_lenght =document.getElementById('man_printer_lenght_box');
+
+
+
+                            if (lami_factor1.checked) {
+                                lm_fac = lami_factor1.value;
+                                } else if (lami_factor2.checked) {
+                                lm_fac = lami_factor2.value;
+                                } else if (lami_factor3.checked) {
+                                lm_fac = lami_factor3.value;
+                                } else {
+                                lm_fac = lami_factor4.value;
+                                }
+
+
+                           result_lf_price = (((man_printer_width.value*man_printer_lenght.value)/144)*factor_lf.value)/value_Z.value;
+
+                              result_lf_price =  result_lf_price.toFixed(4);
+                           document.getElementById('lf_price_box_tab4').value = result_lf_price;
+                           document.getElementById('lf_price_box2_tab4').value = result_lf_price;
+
+
+
+                           result_lami_price = (((man_printer_width.value*man_printer_lenght.value)/144)*lm_fac)/value_Z.value;
+
+                                result_lami_price =  result_lami_price.toFixed(4);
+                                 document.getElementById('lami_price_box_tab4').value = result_lami_price;
+                                 document.getElementById('lami_price_box2_tab4').value = result_lami_price;
+
+
+                   };
+
+
+
+
+
+
+
+                            </script>
+                   
+                   <!--   จบการ คำนวนลูกฟูก tab4 --> 
 
 
     <!--   คำนวนค่าเพลท -->
@@ -7024,6 +7461,39 @@ function addCommas(nStr){
                               result_blf_price =  result_blf_price.toFixed(3);
                            document.getElementById('Blf_price_box').value = result_blf_price;
                            document.getElementById('Blf_price_box2').value = result_blf_price;
+
+                           };
+
+                            </script>
+                           
+                           
+                               <script>
+
+                        document.getElementById('bt_calc_B_lf_tab4').onclick= function() {
+
+                           var Blf_factor1 =document.getElementById('check_Blf_factor1_tab4');
+                           var Blf_factor2 =document.getElementById('check_Blf_factor2_tab4');
+                           var Blf_factor3 =document.getElementById('check_Blf_factor3_tab4');
+
+                           var exa_Bluk = document.getElementById('exa_Bluk_box_tab4');
+                           var exa_bluk_pack =document.getElementById('exa_bluk_pack_box_tab4');
+
+                            if (Blf_factor1.checked) {
+                                blf_fac = Blf_factor1.value;
+                                } else if (Blf_factor2.checked) {
+                                blf_fac = Blf_factor2.value;
+                                } else {
+                                blf_fac = Blf_factor3.value;
+                                }
+
+
+                           result_blf_price = exa_Bluk.value/(exa_bluk_pack.value*blf_fac);
+
+                          //  result_blf_price = 0;
+
+                              result_blf_price =  result_blf_price.toFixed(3);
+                           document.getElementById('Blf_price_box_tab4').value = result_blf_price;
+                           document.getElementById('Blf_price_box2_tab4').value = result_blf_price;
 
                            };
 
