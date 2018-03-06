@@ -722,7 +722,7 @@
 
    <div class="row">
 
-       <ul class="nav nav-tabs">
+       <ul class="nav nav-tabs" id="main_tab">
 
 <li class="active"><a data-toggle="tab" href="#home">รายละเอียดงาน</a></li>
 <li ><a data-toggle="tab" href="#note_file">ข้อความและเอกสารแนบ</a></li>
@@ -1738,7 +1738,7 @@ function chkEvent(e) {
                                          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รวมค่าบล็อกปั๊มนูน</th>
+                                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รวมค่าบล็อกปั๊มนูน</th>
                                         <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #FFCCFF" id="total_price_BPN_box" name="total_price_BPN_box" placeholder="" value="<?php echo number_format((extract_int($pur_priceBoxPN1)+extract_int($pur_priceBoxPN2)+extract_int($pur_priceBoxPN3)),2); ?>" OnChange="JavaScript:chkNum(this)"></th>
                                         <th>&nbsp;&nbsp;รวมค่าบล็อกปั๊มนูนจริง</th>
                                         <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #9999FF" id="total_price_BPNR_box" name="total_price_BPNR_box" value="<?php echo number_format((extract_int($man_real_priceBoxPN1)+extract_int($man_real_priceBoxPN2)+extract_int($man_real_priceBoxPN3)),2); ?>" placeholder="" ></th>
@@ -1864,7 +1864,7 @@ function chkEvent(e) {
                                          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รวมค่าบล็อกปั๊มเค</th>
+                                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รวมค่าบล็อกปั๊มเค</th>
                                         <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #FFCCFF" id="total_price_BPN_box" name="total_price_BPN_box" placeholder="" value="<?php echo number_format((extract_int($pur_priceBoxPumK1)+extract_int($pur_priceBoxPumK2)+extract_int($pur_priceBoxPumK3)+extract_int($pur_priceBoxPumK4)),2); ?>" OnChange="JavaScript:chkNum(this)"></th>
                                         <th>&nbsp;&nbsp;รวมค่าบล็อกปั๊มเคจริง</th>
                                         <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #9999FF" id="total_price_BPKR_box" name="total_price_BPKR_box" value="<?php echo number_format((extract_int($man_real_priceBoxPK1)+extract_int($man_real_priceBoxPK2)+extract_int($man_real_priceBoxPK3)+extract_int($man_real_priceBoxPK4)),2); ?>" placeholder=""></th>
@@ -3859,14 +3859,14 @@ function chkEvent(e) {
 <table data-toggle="table" data-striped="true">
     <tbody>
 <tr>
-<th>ปั๊มนูน จำนวน</th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ปั๊มนูน จำนวน</th>
 <th><input type="text" class="form-control" style="width:80px; text-align: right; " id="man_PN_amount_box" name="man_PN_amount_box" placeholder="" value="<?php echo $exa_PN_amount; ?>" ></th>
 <th>&nbsp;รอบ</th>
 
-<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รวมค่าปั๊มนูน</th>
+<th>&nbsp;รวมค่าปั๊มนูน</th>
 <th><input type="text" class="form-control" style="width:80px; text-align: right; background: #FFCCFF" id="man_total_PN_box" name="man_total_PN_box" placeholder="" value="<?php echo $man_total_price_PN; ?>" ></th>
 
-<th>&nbsp;&nbsp;รวมค่าปั๊มนูนจริง</th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;รวมค่าปั๊มนูนจริง</th>
 <th><input type="text" class="form-control" style="width:80px; text-align: right; background: #9999FF" id="man_total_PNR_box" name="man_total_PNR_box" value="<?php echo $man_total_PNR; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
 
 
@@ -3875,12 +3875,12 @@ function chkEvent(e) {
 
 <td></td>
 <th></th>
-<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ปั๊มขาด จำนวน</th>
+<th>&nbsp;&nbsp;&nbsp;ปั๊มขาด จำนวน</th>
 <th><input type="text" class="form-control" style="width:80px; text-align: right; " id="man_PK_amount_box" name="man_PK_amount_box" placeholder="" value="<?php echo $exa_PY_amount; ?>" ></th>
 <th>&nbsp;รอบ</th>
 
 <th>  &nbsp; &nbsp;&nbsp;ค่าปั๊มขาด</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #CCFFFF" id="price_PY_box" name="price_PY_box" placeholder="" value="<?php echo $price_PY_calc;?>"> </th>
+<th><input type="text" class="form-control" style="width:90px; text-align: right; background: #CCFFFF" id="price_PY_box" name="price_PY_box" placeholder="" value="<?php echo $price_PY_calc;?>"> </th>
 <th><font color=red>&nbsp;&nbsp;*</font> ค่าปั๊มขาดจริง</th>
 <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #6699FF" id="price_PY_box2" name="price_PY_box2" placeholder="" value="<?php echo $jobs_real_price_PY;?>" ></th>
 
@@ -3963,6 +3963,8 @@ function chkEvent(e) {
      <div id="tab8" class="tab-pane fade">
              <p>
     
+     <form method="post" id="sales_edit_tab8" name= "sales_edit_tab8" class="form" action= "manager_jobs_edit_tab8.php" >            
+                 
     <table data-toggle="table" data-striped="true">
 <thead>
 <tr>
@@ -3970,22 +3972,22 @@ function chkEvent(e) {
  <th>&nbsp;&nbsp; 8. ค่าขนส่ง</th>
 
 
- <th>&nbsp;&nbsp;<input id ="check_logis_factor2" name ="check_logis_factor" type="radio" value="1000" <?php echo $man_check_logis2; ?>>  1000</th>
-<th>&nbsp;&nbsp;<input id ="check_logis_factor3" name ="check_logis_factor" type="radio" value="1200" <?php echo $man_check_logis3; ?>>  1200</th>
-<th>&nbsp;&nbsp;<input id ="check_logis_factor4" name ="check_logis_factor" type="radio" value="1500" <?php echo $man_check_logis4; ?>>  1500</th>
-<th>&nbsp;&nbsp;<input id ="check_logis_factor5" name ="check_logis_factor" type="radio" value="3000" <?php echo $man_check_logis5; ?>>  3000</th>
+ <th>&nbsp;&nbsp;<input id ="check_logis_factor2_tab8" name ="check_logis_factor" type="radio" value="1000" <?php echo $man_check_logis2; ?>>  1000</th>
+<th>&nbsp;&nbsp;<input id ="check_logis_factor3_tab8" name ="check_logis_factor" type="radio" value="1200" <?php echo $man_check_logis3; ?>>  1200</th>
+<th>&nbsp;&nbsp;<input id ="check_logis_factor4_tab8" name ="check_logis_factor" type="radio" value="1500" <?php echo $man_check_logis4; ?>>  1500</th>
+<th>&nbsp;&nbsp;<input id ="check_logis_factor5_tab8" name ="check_logis_factor" type="radio" value="3000" <?php echo $man_check_logis5; ?>>  3000</th>
 
  <th>&nbsp; &nbsp;&nbsp;นน. กระดาษ</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="paper_weight_box" name="paper_weight_box" value="<?php echo $man_paper_weight; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="paper_weight_box_tab8" name="paper_weight_box_tab8" value="<?php echo $man_paper_weight; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
 <th>&nbsp; </th>
 <th>&nbsp; &nbsp;&nbsp;</th>
 <th>&nbsp; &nbsp;&nbsp;ค่าขนส่ง</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="price_logis_box" name="price_logis_box" value="<?php echo $price_logis_calc; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="price_logis_box_tab8" name="price_logis_box_tab8" value="<?php echo $price_logis_calc; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
 
 <th>&nbsp;</th>
 
 <th>&nbsp; &nbsp;&nbsp;<font color=red>&nbsp;&nbsp;*&nbsp;</font>ค่าขนส่งจริง</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_logis_box2" name="price_logis_box2" value="<?php echo $jobs_real_price_logis; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="price_logis_box2_tab8" name="price_logis_box2_tab8" value="<?php echo $jobs_real_price_logis; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
 
 <!-- <th> &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" name = "bt_confirm_price_logis" id = "bt_confirm_price_logis" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Md_confirm_price_logis">ยืนยันราคา</button>
           </th>  -->
@@ -3995,9 +3997,12 @@ function chkEvent(e) {
      </table>
              
         <div class="row">
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <button type="button" name = "bt_calc_logis" id = "bt_calc_logis" class="btn btn-primary"  >คำนวณค่าขนส่ง</button>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <button type="button" name = "bt_calc_logis_tab8" id = "bt_calc_logis_tab8" class="btn btn-primary"  >คำนวณค่าขนส่ง</button>
     </div>
-    
+         
+         
+     </form>
+             
     </div>
      <!-- สิ้นสุด tab8 -->
 
@@ -4029,6 +4034,8 @@ function chkEvent(e) {
      <div id="tab10" class="tab-pane fade">
          <p></p>
       
+          <form method="post" id="sales_edit_tab10" name= "sales_edit_tab10" class="form" action= "manager_jobs_edit_tab10.php" >   
+         
           <table data-toggle="table" data-striped="true">
 <thead>
 <tr>
@@ -4037,18 +4044,18 @@ function chkEvent(e) {
 <th><input type="text" class="form-control" style="width:50px; text-align: right;" id="pur_price_plate_box" name="pur_price_plate_box" value="<?php echo $pur_price_plate; ?>" placeholder="" ></th>
 
 <th> &nbsp;&nbsp; ค่าเพลท</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="plate_price_box" name="plate_price_box" value="<?php echo $plate_price_calc; ?>" placeholder="" > </th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="plate_price_box_tab10" name="plate_price_box_tab10" value="<?php echo $plate_price_calc; ?>" placeholder="" > </th>
 <th><font color=red>&nbsp;&nbsp;*</font> ค่าเพลทจริง</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="plate_price_box2" name="plate_price_box2" placeholder="" value="<?php echo $jobs_real_plate_price; ?>" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="plate_price_box2_tab10" name="plate_price_box2_tab10" placeholder="" value="<?php echo $jobs_real_plate_price; ?>" OnChange="JavaScript:chkNum(this)"></th>
 
 <th> &nbsp;&nbsp; 11.&nbsp;  แบบปั๊ม</th>
 <th><input type="text" class="form-control" style="width:100px; text-align: right; " id="pur_Ptype_box" name="pur_Ptype_box"  value="<?php echo $pur_lay3; ?>" placeholder="" > </th>
 
 <th> &nbsp;&nbsp; ค่าแบบปั๊ม</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="pur_pricePtype_box" name="pur_pricePtype_box"  value="<?php echo $pur_pricePtype_calc; ?>" placeholder="" > </th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #F9E79F" id="pur_pricePtype_box_tab10" name="pur_pricePtype_box_tab10"  value="<?php echo $pur_pricePtype_calc; ?>" placeholder="" > </th>
 
 <th><font color=red>&nbsp;&nbsp;*</font> ค่าแบบปั๊มจริง</th>
-<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="pur_pricePtype_box2" name="pur_pricePtype_box2" value="<?php echo $jobs_real_pur_pricePtype; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
+<th><input type="text" class="form-control" style="width:100px; text-align: right; background: #4FFF7E" id="pur_pricePtype_box2_tab10" name="pur_pricePtype_box2_tab10" value="<?php echo $jobs_real_pur_pricePtype; ?>" placeholder="" OnChange="JavaScript:chkNum(this)"></th>
 <!-- <th> &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" name = "bt_confirm_price_10" id = "bt_confirm_price_10" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Md_confirm_price_10">ยืนยันราคา</button>
           </th>  -->
 
@@ -4057,12 +4064,15 @@ function chkEvent(e) {
          <p>
            <div class="row">
          <div class="col-md-12">
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="button" name = "bt_calc_plate" id = "bt_calc_plate" class="btn btn-primary"  >คำนวณราคาค่าเพลท ค่าแบบปั๊ม</button>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="button" name = "bt_calc_plate_tab10" id = "bt_calc_plate_tab10" class="btn btn-primary"  >คำนวณราคาค่าเพลท ค่าแบบปั๊ม</button>
        </div>
        </div>
          
+          </form>
          
          <hr>
+         
+         
     </div>
      <!-- สิ้นสุด tab10 -->
 
@@ -4314,7 +4324,7 @@ function chkEvent(e) {
                                          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รวมค่าบล็อกปั๊มเค</th>
+                                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รวมค่าบล็อกปั๊มเค</th>
                                         <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #FFCCFF" id="total_price_BPN_box" name="total_price_BPN_box" placeholder="" value="<?php echo number_format((extract_int($pur_priceBoxPumK1)+extract_int($pur_priceBoxPumK2)+extract_int($pur_priceBoxPumK3)+extract_int($pur_priceBoxPumK4)),2); ?>" OnChange="JavaScript:chkNum(this)"></th>
                                         <th>&nbsp;&nbsp;รวมค่าบล็อกปั๊มเคจริง</th>
                                         <th><input type="text" class="form-control" style="width:100px; text-align: right; background: #9999FF" id="total_price_BPKR_box" name="total_price_BPKR_box" value="<?php echo number_format((extract_int($man_real_priceBoxPK1)+extract_int($man_real_priceBoxPK2)+extract_int($man_real_priceBoxPK3)+extract_int($man_real_priceBoxPK4)),2); ?>" placeholder=""></th>
@@ -5909,6 +5919,47 @@ var ajax4=createAjax();
 
 <!-- สิ้นสุดการบันทึกค่า ของ ผู้จัดการ  -->
 
+<!--  บันทึกค่า เมื่อมีการกด tab  -->
+
+<script>
+         $(document).ready(function(){
+   $('#main_tab').on("click",function(e) {
+       
+       
+    if ($("#sales_edit").smkValidate()) {
+                       $.ajax({
+                            url: 'manager_approve.php',
+                            type: 'POST',
+                            data: new FormData( this ),
+                            processData: false,
+                            contentType: false,
+                            dataType: 'json'
+                              })  .done(function( data ) {
+                                  if (data.status === "success") {
+
+                                   $.smkAlert({text: data.message , type: data.status});
+
+                   
+                            } else {
+                                $.smkAlert({text: data.message , type: data.status});
+                            }
+                        //    $("#purc_edit").smkClear();
+                         //   $("#pur_thick_gram_box").focus();
+                      // window.location.reload();
+
+                          });
+                        e.preventDefault();
+
+                    }
+                   e.preventDefault();
+  
+  
+});
+});
+    </script>
+    
+    
+    <!--  บันทึกค่า เมื่อมีการกด tab  -->
 
 <!-- script อนุมัติ ของผู้จัดการ  -->
 
@@ -7434,7 +7485,11 @@ function addCommas(nStr){
 
        <!--   คำนวนราคา B ลูกฟูก -->
 
-               <script>
+            
+                   
+                                                                                                               
+                   
+                   <script>
 
                         document.getElementById('bt_calc_B_lf').onclick= function() {
 
@@ -7584,6 +7639,93 @@ function addCommas(nStr){
 
                      </script>
 
+                   
+                   <!--    script   tab 10     -->
+                   
+                          <script>
+
+                        document.getElementById('bt_calc_plate_tab10').onclick= function() {
+
+
+                           var value_Z =document.getElementById('lay_3');
+
+                           var plate_amount =document.getElementById('pur_price_plate_box');
+
+
+                          // เช็คค่า อาบเงา อาบด้าน
+
+                          var exa_3front1_type =document.getElementById('exa_3front1_type_box');
+                          var exa_3front2_type =document.getElementById('exa_3front2_type_box');
+                          var exa_3front3_type =document.getElementById('exa_3front3_type_box');
+                          var exa_3front4_type =document.getElementById('exa_3front4_type_box');
+
+                          add_plate = 0;
+                          if(exa_3front1_type.value=="อาบเงา" || exa_3front1_type.value=="อาบด้าน"  ){
+                               add_plate = 1;
+                           }
+
+                           if(exa_3front2_type.value=="อาบเงา" || exa_3front2_type.value=="อาบด้าน"  ){
+                               add_plate =  add_plate+1;
+                           }
+
+                           if(exa_3front3_type.value=="อาบเงา" || exa_3front3_type.value=="อาบด้าน"  ){
+                               add_plate =  add_plate+1;
+                           }
+
+                           if(exa_3front4_type.value=="อาบเงา" || exa_3front4_type.value=="อาบด้าน"  ){
+                               add_plate =  add_plate+1;
+                           }
+
+
+
+
+                           result_plate_price = (parseFloat(plate_amount.value)+add_plate)*2000;
+
+                           result_plate_price =  result_plate_price.toFixed(2);
+                            result_plate_price = addCommas(result_plate_price);
+
+
+                            result_ptype_price = 1100*value_Z.value;
+
+                          if(result_ptype_price<5500 && result_ptype_price!=='0.00'){
+                                     alert('ค่าแบบปั๊ม ต้องมีค่าเริ่มต้นที่ 5,500 บาท');
+
+                                     result_ptype_price =  result_ptype_price.toFixed(2);
+                                 result_ptype_price = addCommas(result_ptype_price);
+
+                                     document.getElementById('pur_pricePtype_box_tab10').value = result_ptype_price;
+                                     document.getElementById('pur_pricePtype_box2_tab10').value = '5,500.00';
+                               }else{
+
+                                 result_ptype_price =  result_ptype_price.toFixed(2);
+                                 result_ptype_price = addCommas(result_ptype_price);
+
+
+
+
+                                   document.getElementById('pur_pricePtype_box_tab10').value = result_ptype_price;
+                                   document.getElementById('pur_pricePtype_box2_tab10').value = result_ptype_price;
+
+
+                               }
+
+
+                                  document.getElementById('plate_price_box_tab10').value = result_plate_price;
+                                  document.getElementById('plate_price_box2_tab10').value = result_plate_price;
+
+
+
+
+
+
+
+
+                   };
+
+                     </script>
+                   
+                   
+                   <!--     end script tab 10--> 
 
                  <!--   คำนวนข้อ 5. Factor  -->
                         <script>
@@ -8054,6 +8196,108 @@ function addCommas(nStr){
                             document.getElementById('paper_weight_box').value = result_weight;
                              document.getElementById('price_logis_box').value = result_calc_logis;
                              document.getElementById('price_logis_box2').value = result_calc_logis;
+
+
+                   };
+
+                     </script>
+                                 
+                                   <!--   คำนวน  tab 8 -->
+         <script>
+
+
+
+
+
+
+                        document.getElementById('bt_calc_logis_tab8').onclick= function() {
+
+
+
+                           var exa_plastic_width = document.getElementById('exa_plastic_width_box');
+                           var exa_plastic_length = document.getElementById('exa_plastic_length_box');
+                           var exa_plastic_thick = document.getElementById('exa_plastic_thick_box_gram');
+
+                           var value_y =document.getElementById('lay_2').value;
+                           var value_z =document.getElementById('lay_3').value;
+
+                          //  var order1 = document.getElementById('order1_box');
+                             var order1 = <?php echo $jobs_order11; ?>;
+                            // factor ค่าขนส่ง
+
+
+                           var logis_factor2 =document.getElementById('check_logis_factor2_tab8');
+                           var logis_factor3 =document.getElementById('check_logis_factor3_tab8');
+                           var logis_factor4 =document.getElementById('check_logis_factor4_tab8');
+                           var logis_factor5 =document.getElementById('check_logis_factor5_tab8');
+
+
+                               if (logis_factor2.checked) {
+                                       logis_fac = logis_factor2.value;
+                               } else if (logis_factor3.checked) {
+                                       logis_fac = logis_factor3.value;
+                                } else if (logis_factor4.checked) {
+                                      logis_fac = logis_factor4.value;
+                               } else if (logis_factor5.checked) {
+                                      logis_fac = logis_factor5.value;
+                                   } else {
+                                      logis_fac = 0;
+                                   }
+
+
+
+
+
+                            // หาค่า y
+                             if(value_y=="1"){
+                                 value_y=500;
+                                 }else if(value_y=="2"){
+                                  value_y=1000;
+                                 }else if(value_y=="3"){
+                                 value_y=1500;
+                                 }else if(value_y=="4"){
+                                 value_y=2000;
+                                 }else {
+                                 value_y=2500;
+                                 }
+
+                                // จำนวน order หาร z
+
+                                order1 = order1/value_z;
+
+                                // คำนวณหาค่า R
+
+
+                                if(order1>10000){
+                                   value_R = (order1*1.06)/value_y;
+                                 }else{
+                                   value_R = (parseFloat(order1)+600)/value_y;
+                                  }
+
+                             // หาน้ำหนักกระดาษ
+
+                             result_weight = ((exa_plastic_width.value*exa_plastic_length.value*exa_plastic_thick.value)/3100)*(value_R/1000);
+
+
+
+
+
+                               result_weight =  result_weight.toFixed(3);
+
+
+                               // คำนวณค่าขนส่ง
+
+                               result_calc_logis = result_weight*logis_fac;
+
+                               result_calc_logis =  result_calc_logis.toFixed(2);
+                               result_calc_logis = addCommas(result_calc_logis);
+
+
+
+                            //  ส่วนแสดงผล
+                            document.getElementById('paper_weight_box_tab8').value = result_weight;
+                             document.getElementById('price_logis_box_tab8').value = result_calc_logis;
+                             document.getElementById('price_logis_box2_tab8').value = result_calc_logis;
 
 
                    };
